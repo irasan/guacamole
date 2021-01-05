@@ -1,45 +1,110 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+# Guacamole game 
 
-Welcome irasan,
+This is an interpretation of the famous Whack-a-mole game. Players are invited to smash avocadoes that appear
+on the screen and earn as many points as they possibly can under 60 seconds. This game helps to boost player's concentration 
+as different avocados give different points. The best score of the player is stored and shown during the game. 
+This is a HTML game and it should run on any browser.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+## UX
+### Project Goals
+The primary goal of this project is to create a simple interactive game that will run in any browser.
 
-## Gitpod Reminders
+### User's Goals
+The main audience of this game will be kids and young adults who like to play games or want a quick distraction.
+The game promotes quick decision making and concentration so it also can be used by older people.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+Player's goals are:
+* to play a fun game;
+* to see the best score and try to beat it;
+* to be able to change the complexity of the game;
+* to be able to turn on and off music.
 
-`python3 -m http.server`
+### User Stories
+As a first time player, I want:
+* to understand the rules or be able to find them;
+* to be able to navigate the game easily;
+* to be able to turn the music off if necessary.
 
-A blue button should appear to click: *Make Public*,
+As a return player, I want:
+* to see my previous score;
+* to be able to increase the complexity of the game.
 
-Another blue button should appear to click: *Open Browser*.
+### Wireframes
+After thorough consideration of users' and developer's goals, the following [wireframes](assets/wireframes) were created. 
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### Developer's Goals
+This is a learning project and the main purpose of it's creating is to learn JavaScript 
+and interactive design implementation. Another very improtant goal is to build a game 
+that will be added to the portfolio. 
 
-A blue button should appear to click: *Make Public*,
+### Design Choices
+The overall feel of the game is simple and relaxed. Even though the game itself is intense,
+the following design choices were made to implement the relaxed feeling:
 
-Another blue button should appear to click: *Open Browser*.
+#### Fonts
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+#### Icons
+All icons were chosen for their obvious meaning so that they can be easily understood by everyone.
 
-## Updates Since The Instructional Video
+#### Media
+Images shouldn't be overwhelming or disctucting. 
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+## Features
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### Existing Features
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+### Features Left To implement
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+## Technologies used
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+## Testing
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+### Testing Using Validators
+The website was continuously tested on emulated large and small screens when writing the code. 
+Upon completion of the writing process, developer used W3C Css Validation Service and W3C MarkUp Validation Service to check the validity of the code. 
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### Automated Testing
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### Client Stories Testing
 
---------
+### Testing client stories from UX section in README.md
 
-Happy coding!
+### Testing on Different Browsers and Devices
+The website was tested on different browsers and proved to be issue-free on the following browsers:
+
+* Chrome;
+* Safari;
+* Edge;
+* Firefox.
+
+### Testing on Potential Website Visitors
+
+## How To Run This Project Locally
+To clone this project into GitHub, you will need:
+
+A GitHub account. 
+* Create your GitHub account [here](https://github.com/join?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home) 
+* Use the Chrome browser.
+
+Then follow these steps:
+
+1. Install the GitPod browser [extentions for Chrome](https://chrome.google.com/webstore/detail/gitpod-dev-environments-i/dodmmooeoklaejobgleioelladacbeki).
+1. Restart the browser.
+1. Log into [GitPod](https://gitpod.io/workspaces/) using your GitHub account.
+1. Navigate to the project GitHub repository.
+1. Click the green "GitPod" button in the top right corner.
+1. This will trigger a new GitPod workspace to be created from the code in GitHub where you can work locally.
+
+To work on the project code within the local IDE:
+
+1. Navigate to the project GitHub repository.
+1. Click "Clone or Download".
+1. Copy Clone's URL for the repository.
+1. Open the terminal in your local IDE.
+1. Change the current working directory to the location where you want the clone directory to be made.
+1. Type "git clone" and then paste the URK from the step 3.
+1. Press Enter and your local clone will be created.
+
+## Credits
+### Media
+### Borrowed Code
