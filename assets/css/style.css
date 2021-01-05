@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+.top {
+    padding-bottom: 80px;
+}
+
 #playMusic {
 font-size: 32px;
 color: green;
@@ -18,3 +24,35 @@ margin: auto;
 float: right; 
 }
 
+h1 {
+    text-align: center;
+}
+
+body {
+font-family: 'Varela Round', sans-serif;
+}
+
+.container {
+position: relative;
+width: 50%;
+}
+
+.container img {
+width: 100%;
+height: auto;
+}
+
+.container button {
+background-color: green;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+color: white;
+font-size: 16px;
+padding: 12px 24px;
+border: none;
+cursor: pointer;
+border-radius: 5px;
+}

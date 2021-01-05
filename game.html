@@ -27,23 +27,17 @@
     <title>Guacamole</title>
 </head>
 
-<body>
+<body onload="game()">
     <header>
-        <div class="top">
         <button class="toggleMusic" id="playMusic"><i class="fas fa-volume-off"></i> </button>
-        <button id="info"><i class="fas fa-info" onclick="window.location.href = 'rules.html'" target="_parent"></i></button>
-    </div>
-</header>
-<div>
-    <h1>Smash them all!</h1>
-</div>
-    <div class="container">
-        <img src="assets/images/avocados.png" alt="image of a target">
-        <button id="go" onclick="window.location.href = 'game.html'"><i class="fas fa-play-circle fa-3x"></i></button>
-    </div>
+        <button id="info"><i class="fas fa-info" onclick="window.open('rules.html')"></i></button>
+    </header>
+
+    
+    <button id="play" ><img id="start" src="assets/images/quantum.png" alt=""></button>
 
     <script src="assets/main.js"></script>
-</body>
-
+</body >
+    
 
 </html>
