@@ -2,6 +2,8 @@
 
 .top {
     padding-bottom: 80px;
+    display: block;
+    margin: 0;
 }
 
 #playMusic {
@@ -12,6 +14,7 @@ height:60px;
 display: block;
 margin: auto;
 float: left;
+border: none;
 }
 
 #info {
@@ -22,6 +25,7 @@ height:60px;
 display: block;
 margin: auto;
 float: right; 
+border: none;
 }
 
 h1 {
@@ -30,8 +34,10 @@ h1 {
 
 body {
 font-family: 'Varela Round', sans-serif;
+text-align: center;
 }
 
+/* Styles for invitation to play */
 .container {
 position: relative;
 width: 50%;
@@ -50,9 +56,43 @@ left: 50%;
 transform: translate(-50%, -50%);
 -ms-transform: translate(-50%, -50%);
 color: white;
-font-size: 16px;
 padding: 12px 24px;
 border: none;
 cursor: pointer;
 border-radius: 5px;
+}
+
+/* Styles for game itself */
+.game {
+position: relative;
+width: 50%;
+height: auto;
+background-color: yellow;
+}
+
+.box {
+display: block;
+min-height: 300px;
+}
+
+.avocado {
+visibility: hidden;
+background: url(../images/avocado1.png);
+display: inline-block;
+content: "";
+width: 90%;
+height: 200px;
+}
+
+.avocado .up {
+visibility: visible; 
+}
+
+.bowl {
+display: inline-block;
+background-image: url(../images/bowl.png);
+content: "";
+
+width: 90%;
+height: 100px;
 }
