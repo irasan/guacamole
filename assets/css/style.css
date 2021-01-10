@@ -91,14 +91,8 @@ visibility: hidden;
 .smashed {
 background: url(../images/smash.png) !important;
 display: inline-block;
-content: "";
 width: 90%;
 height: 200px;
-}
-
-.rotate {
-    transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
 }
 
 .bowl {
