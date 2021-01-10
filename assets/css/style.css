@@ -68,31 +68,43 @@ position: relative;
 width: 50%;
 height: auto;
 background-color: yellow;
+overflow: hidden;
+width: 900px;
 }
 
 .box {
 display: block;
-min-height: 300px;
+height: 300px;
 }
 
 .avocado {
-visibility: hidden;
-background: url(../images/avocado1.png);
 display: inline-block;
 content: "";
 width: 90%;
 height: 200px;
 }
 
-.avocado .up {
-visibility: visible; 
+.down {
+visibility: hidden;
+}
+
+.smashed {
+background: url(../images/smash.png) !important;
+display: inline-block;
+content: "";
+width: 90%;
+height: 200px;
+}
+
+.rotate {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
 }
 
 .bowl {
 display: inline-block;
 background-image: url(../images/bowl.png);
 content: "";
-
 width: 90%;
 height: 100px;
 }
