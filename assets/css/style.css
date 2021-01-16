@@ -114,6 +114,10 @@ border: 3px solid #cccccc;
 padding: 5px;
 }
 
+.red {
+    color: red;
+}
+
 #score {
 width: 600px;
 height: 120px;

@@ -5,17 +5,17 @@ $(document).on('click', '.toggleMusicButton', function () {
 });
 
 //variables
-var avocados = document.querySelectorAll('.avocado');
+var veg = document.querySelectorAll('.avocado');
 var bowls = document.querySelectorAll('.bowl');
 var timeUp = false;
 var smashSound = new sound("assets/audio/smash.wav");
 var gameMusic = new sound("assets/audio/gameMusic.wav");
-var score = document.getElementById('score');
+var score = 0;
 
 // function to get a random avocado appear in a hole
-function randomAvocado(avocados) {
-    var index = Math.floor(Math.random() * avocados.length);
-    var active = avocados[index];
+function randomVeg(veg) {
+    var index = Math.floor(Math.random() * veg.length);
+    var active = veg[index];
     return active;
 }
 
@@ -25,14 +25,29 @@ function randomTime(min, max) {
 }
 
 // function that makes an avocado to pop up
-function popUp() {
-    var activeAvocado = randomAvocado(avocados);
+function popUp1() {
+    var activeAvocado = randomAvocado(veg);
     var popUpTime = randomTime(1000, 2500);
 
     activeAvocado.classList.remove('down');
     console.log("continue");
     setTimeout(function () {
         activeAvocado.classList.add('down');
+        console.log("cont-2");
+        if (!timeUp) {
+            popUp()
+        }
+    }, popUpTime);
+}
+
+function popUp2() {
+    var activeTomato = randomTomato(veg);
+    var popUpTime = randomTime(900, 2000);
+    this.src = "assets/images/smash.png";
+    activeTomato.classList.remove('down');
+    console.log("continue");
+    setTimeout(function () {
+        activeTomato.classList.add('down');
         console.log("cont-2");
         if (!timeUp) {
             popUp()
@@ -56,10 +71,11 @@ function sound(src) {
 }
 
 function startGame() {
-    timer();
+    gameTimer();
     gameMusic.play();
-    popUp();
+    popUp1();
     setTimeout(() => timeUp = true, 15000); //show random moles for 30 seconds
+    setTimeout(() => popUp2(), 3000);
 }
 
 function smash() {
@@ -68,6 +84,8 @@ function smash() {
     setTimeout(() => {
         this.src = "assets/images/avocado1.png";
     }, 650);
+    score += 10;
+    document.getElementById("score").innerHTML = score;
 }
 
 // function to play and pause game music
@@ -81,7 +99,7 @@ function saveScore(score) {
 }
 
 //function to display timer
-function timer(){
+function gameTimer(){
     var seconds = document.getElementById("timer").textContent;
     var countdown = setInterval(function() {
     seconds--;

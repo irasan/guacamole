@@ -106,5 +106,10 @@ To work on the project code within the local IDE:
 1. Press Enter and your local clone will be created.
 
 ## Credits
-### Media
+### Images
+Images for the game were downloaded from PNGTrees
+### Sounds
+Smashing sounds were taken from [here](https://freesound.org/people/LittleRobotSoundFactory/sounds/290443/)
+Music for game for taken from [here](https://freesound.org/people/code_box/sounds/520931/)
 ### Borrowed Code
+Code for setting up a timer was borrowed from [here](https://tonnygaric.com/blog/create-a-seconds-countdown-in-6-lines-of-javascript)
