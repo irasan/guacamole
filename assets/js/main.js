@@ -1,6 +1,7 @@
 $(document).on('click', '.toggleMusicButton', function () {
     icon = $(this).find("i");
     icon.toggleClass('fa-volume-mute fa-volume-off');
+    togglePlay();
 });
 
 //variables
@@ -9,14 +10,12 @@ var bowls = document.querySelectorAll('.bowl');
 var timeUp = false;
 var smashSound = new sound("assets/audio/smash.wav");
 var gameMusic = new sound("assets/audio/gameMusic.wav");
-var isPlaying = false;
-// var highestScore = document.getElementById('#highestScore');
+var score = document.getElementById('score');
 
 // function to get a random avocado appear in a hole
 function randomAvocado(avocados) {
     var index = Math.floor(Math.random() * avocados.length);
     var active = avocados[index];
-    console.log("Active: " + active);
     return active;
 }
 
@@ -27,10 +26,8 @@ function randomTime(min, max) {
 
 // function that makes an avocado to pop up
 function popUp() {
-    // gameMusic.muted = true;
-    gameMusic.play();
     var activeAvocado = randomAvocado(avocados);
-    var popUpTime = randomTime(1000, 1800);
+    var popUpTime = randomTime(1000, 2500);
 
     activeAvocado.classList.remove('down');
     console.log("continue");
@@ -59,35 +56,40 @@ function sound(src) {
 }
 
 function startGame() {
-    console.log("start");
-    timeUp = false;
-    score = 0;
+    timer();
+    gameMusic.play();
     popUp();
-    setTimeout(() => timeUp = true, 15000); //show random moles for 15 seconds
+    setTimeout(() => timeUp = true, 15000); //show random moles for 30 seconds
 }
 
 function smash() {
     this.src = "assets/images/smash.png";
-    console.log(this.src);
     smashSound.play();
     setTimeout(() => {
         this.src = "assets/images/avocado1.png";
-    }, 750);
-    console.log(this.src);
+    }, 650);
 }
 
 // function to play and pause game music
 function togglePlay() {
-  isPlaying ? gameMusic.pause() : gameMusic.play();
-};
+return gameMusic.paused ? gameMusic.play() : gameMusic.stop();
+}
 
-gameMusic.onplaying = function() {
-  isPlaying = true;
-};
-gameMusic.onpause = function() {
-  isPlaying = false;
-};
+//function to store highest score
+function saveScore(score) {
+    localStorage.highestScore = this.score;
+}
+
+//function to display timer
+function timer(){
+    var seconds = document.getElementById("timer").textContent;
+    var countdown = setInterval(function() {
+    seconds--;
+    document.getElementById("timer").textContent = seconds;
+    if (seconds <= 0) clearInterval(countdown);
+}, 1000);
+}
 
 //event listeners
 avocados.forEach((item) => item.addEventListener("click", smash));
-document.getElementsByID("playMusic").addEventListener("click", togglePlay);
+playMusic.addEventListener("click", togglePlay);
