@@ -84,6 +84,14 @@ width: 90%;
 height: 200px;
 }
 
+.tomato {
+src: "assets/images/tomato.png";
+display: inline-block;
+content: "";
+width: 90%;
+height: 200px;
+}
+
 .down {
 visibility: hidden;
 }
@@ -104,7 +112,19 @@ height: 100px;
 }
 
 .scoreTimeDisplay {
-    font-size: 22px;
+font-size: 22px;
+background-color: green;
+}
+
+#countdown {
+font-size: 64px;
+position: absolute;
+top: 45%;
+left: 50%;
+}
+
+#countdown .hide {
+visibility: hidden;
 }
 
 #timer {
@@ -114,13 +134,27 @@ border: 3px solid #cccccc;
 padding: 5px;
 }
 
-.red {
-    color: red;
-}
-
 #score {
 width: 600px;
 height: 120px;
 border: 3px solid #cccccc;
 padding: 5px;
+}
+
+/* Styles for rules page */
+.rules {
+    text-align: center;
+    padding: 20px;
+    line-height: 60px;
+    font-size: 32px;
+}
+
+#quacamole {
+    height: 250px;
+}
+
+@media (min-width: 990px){
+    #quacamole {
+    height: 400px;
+}
 }

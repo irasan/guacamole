@@ -1,7 +1,6 @@
 $(document).on('click', '.toggleMusicButton', function () {
     icon = $(this).find("i");
     icon.toggleClass('fa-volume-mute fa-volume-off');
-    togglePlay();
 });
 
 //variables
@@ -26,7 +25,7 @@ function randomTime(min, max) {
 
 // function that makes an avocado to pop up
 function popUp1() {
-    var activeAvocado = randomAvocado(veg);
+    var activeAvocado = randomVeg(veg);
     var popUpTime = randomTime(1000, 2500);
 
     activeAvocado.classList.remove('down');
@@ -35,62 +34,126 @@ function popUp1() {
         activeAvocado.classList.add('down');
         console.log("cont-2");
         if (!timeUp) {
-            popUp()
+            popUp1();
         }
     }, popUpTime);
 }
 
+function checkScore() {
+    console.log('check score');
+
+    if (score >= 80) {
+        timeUp = false;
+        gameTimer();
+        setTimeout(() =>
+            timeUp = true, 18000);
+        setTimeout(function () {
+            popUp1();
+            secondsToStart()
+        }, 3000);
+
+    } else {
+        gameover();
+    }
+}
+
+function checkScore2() {
+    console.log('check score2');
+    if (score >= 150) {
+        setTimeout(function () {
+            popUp3();
+            secondsToStart()
+        }, 3500);
+        timeUp = false;
+        setTimeout(() =>
+            timeUp = true, 15000);
+    } else {
+        gameover();
+    }
+}
+
 function popUp2() {
-    var activeTomato = randomTomato(veg);
+    var activeTomato = randomVeg(veg);
     var popUpTime = randomTime(900, 2000);
-    this.src = "assets/images/smash.png";
-    activeTomato.classList.remove('down');
-    console.log("continue");
+    activeTomato.classList.remove('avocado', 'down');
+    activeTomato.classList.add('tomato');
+    console.log("continue3");
     setTimeout(function () {
         activeTomato.classList.add('down');
-        console.log("cont-2");
+        console.log("cont-4");
         if (!timeUp) {
-            popUp()
+            popUp2();
+        }
+    }, popUpTime);
+}
+
+function popUp3() {
+    var activeOnion = randomVeg(veg);
+    var popUpTime = randomTime(6000, 1000);
+
+    activeAvocado.classList.remove('down');
+    console.log("continue5");
+    setTimeout(function () {
+        activeAvocado.classList.add('down');
+        console.log("cont-6");
+        if (!timeUp) {
+            popUp1();
         }
     }, popUpTime);
 }
 
 function sound(src) {
-  this.sound = document.createElement("audio");
-  this.sound.src = src;
-  this.sound.setAttribute("preload", "auto");
-  this.sound.setAttribute("controls", "none");
-  this.sound.style.display = "none";
-  document.body.appendChild(this.sound);
-  this.play = function(){
-    this.sound.play();
-  }
-  this.stop = function(){
-    this.sound.pause();
-  }
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function () {
+        this.sound.play();
+    }
+    this.stop = function () {
+        this.sound.pause();
+    };
 }
 
+//function that starts and controls the game
 function startGame() {
-    gameTimer();
+    setTimeout(function () {
+        popUp1();
+        gameTimer();
+        setTimeout(() =>
+            timeUp = true, 15000);
+    }, 3000);
+    secondsToStart();
     gameMusic.play();
-    popUp1();
-    setTimeout(() => timeUp = true, 15000); //show random moles for 30 seconds
-    setTimeout(() => popUp2(), 3000);
+
+    setTimeout(() =>
+        checkScore(), 18000);
+
+    setTimeout(() =>
+        checkScore2(), 36000);
+};
+
+function gameover() {
+    alert("GAMEOVER!");
 }
 
+//function to smash the veggies and get scores
 function smash() {
-    this.src = "assets/images/smash.png";
+    this.src = "assets/images/greenSmash.png";
     smashSound.play();
     setTimeout(() => {
         this.src = "assets/images/avocado1.png";
     }, 650);
     score += 10;
     document.getElementById("score").innerHTML = score;
+    console.log(score);
 }
 
 // function to play and pause game music
 function togglePlay() {
-return gameMusic.paused ? gameMusic.play() : gameMusic.stop();
+    return gameMusic.paused ? gameMusic.play() : gameMusic.stop();
 }
 
 //function to store highest score
@@ -99,15 +162,29 @@ function saveScore(score) {
 }
 
 //function to display timer
-function gameTimer(){
+function gameTimer() {
     var seconds = document.getElementById("timer").textContent;
-    var countdown = setInterval(function() {
-    seconds--;
-    document.getElementById("timer").textContent = seconds;
-    if (seconds <= 0) clearInterval(countdown);
-}, 1000);
+    var countdown = setInterval(function () {
+        seconds--;
+        document.getElementById("timer").textContent = seconds;
+        if (seconds <= 0) clearInterval(countdown);
+    }, 1000);
+}
+
+//function to display seconds before the game starts
+function secondsToStart() {
+    document.getElementById("countdown").style.display = "block";
+    var seconds = 3;
+    var countdown = setInterval(function () {
+        seconds--;
+        document.getElementById("countdown").textContent = seconds;
+        if (seconds <= 0) clearInterval(countdown);
+    }, 1000);
+    setTimeout(() => {
+        document.getElementById("countdown").style.display = 'none';
+    }, 3000);
 }
 
 //event listeners
-avocados.forEach((item) => item.addEventListener("click", smash));
-playMusic.addEventListener("click", togglePlay);
+veg.forEach((item) => item.addEventListener("click", smash));
+document.getElementById('playMusic').onToggle = togglePlay()
