@@ -85,11 +85,15 @@ height: 200px;
 }
 
 .tomato {
-src: "assets/images/tomato.png";
+content: url("assets/images/tomato.png");
 display: inline-block;
 content: "";
 width: 90%;
 height: 200px;
+}
+
+.garlic {
+content: url("assets/images/garlic.png");
 }
 
 .down {
@@ -97,7 +101,6 @@ visibility: hidden;
 }
 
 .smashed {
-background: url(../images/smash.png) !important;
 display: inline-block;
 width: 90%;
 height: 200px;
@@ -105,7 +108,6 @@ height: 200px;
 
 .bowl {
 display: inline-block;
-background-image: url(../images/bowl.png);
 content: "";
 width: 90%;
 height: 100px;
