@@ -10,6 +10,17 @@ var timeUp = false;
 var smashSound = new sound("assets/audio/smash.wav");
 var gameMusic = new sound("assets/audio/gameMusic.wav");
 var score = 0;
+var currentLevel = 1;
+
+function checkLevel(clickedVeg) {
+    if (currentLevel == 1) {
+        smashAvocado(clickedVeg);
+    } else if (currentLevel == 2) {
+        smashTomato(clickedVeg);
+    } else if (currentLevel == 3) {
+        smashGarlic(clickedVeg);
+    }
+}
 
 // function to get a random avocado appear in a hole
 function randomVeg(veg) {
@@ -33,6 +44,9 @@ function popUp1() {
         activeAvocado.classList.add('down');
         console.log("cont-2");
         if (!timeUp) {
+            if(currentLevel != 1) {
+                return;
+            }
             popUp1();
         }
     }, popUpTime);
@@ -41,13 +55,16 @@ function popUp1() {
 function popUp2() {
     var activeTomato = randomVeg(veg);
     var popUpTime = randomTime(900, 2000);
-   activeTomato.src = "assets/images/tomato.png";
-   activeTomato.classList.remove('down');
+    activeTomato.src = "assets/images/tomato.png";
+    activeTomato.classList.remove('down');
     console.log("continue3");
     setTimeout(function () {
         activeTomato.classList.add('down');
         console.log("cont-4");
         if (!timeUp) {
+            if (currentLevel != 2) {
+                return;
+            }
             popUp2();
         }
     }, popUpTime);
@@ -63,6 +80,9 @@ function popUp3() {
         activeGarlic.classList.add('down');
         console.log("cont-6");
         if (!timeUp) {
+            if (currentLevel != 3) {
+                return;
+            }
             popUp3();
         }
     }, popUpTime);
@@ -84,6 +104,7 @@ function sound(src) {
 }
 
 function level1() {
+    currentLevel = 1;
     setTimeout(function () {
         popUp1();
         gameTimer();
@@ -95,6 +116,7 @@ function level1() {
 }
 
 function level2() {
+    currentLevel = 2;
     console.log('check score 2');
     if (score < 80) {
         message.innerText = "GAMEOVER!";
@@ -113,6 +135,7 @@ function level2() {
 }
 
 function level3() {
+    currentLevel = 3;
     console.log('check score 3');
     if (score < 150) {
         alert("GAMEOVER!");
@@ -140,13 +163,15 @@ function gameover() {
 }
 
 //functions to smash the veggies and get scores
-function smashAvocado() {
-    this.src = "assets/images/greenSmash.png";
-    this.style.pointerEvents = "none";
+function smashAvocado(clickedVeg) {
+    console.log(clickedVeg);
+    clickedVeg.src = "assets/images/greenSmash.png";
+    clickedVeg.style.pointerEvents = "none";
     smashSound.play();
     setTimeout(() => {
-        this.src = "assets/images/avocado1.png";
-        this.style.pointerEvents = "auto";
+        console.log("Reached reset point");
+        clickedVeg.src = "assets/images/avocado1.png";
+        clickedVeg.style.pointerEvents = "auto";
 
     }, 500);
     score += 10;
@@ -154,22 +179,23 @@ function smashAvocado() {
     console.log(score);
 }
 
-function smashTomato() {
-    this.src = "assets/images/redSmash.png";
+function smashTomato(clickedVeg) {
+    clickedVeg.src = "assets/images/redSmash.png";
     smashSound.play();
     setTimeout(() => {
-        this.src = "assets/images/tomato.png";
+        clickedVeg.src = "assets/images/tomato.png";
     }, 200);
     score += 10;
     document.getElementById("score").innerHTML = score;
     console.log(score);
 }
 
-function smashGarlic() {
-    this.src = "assets/images/greenSmash.png";
+function smashGarlic(clickedVeg) {
+    console.log("Clicked GARLIC");
+    clickedVeg.src = "assets/images/greenSmash.png";
     smashSound.play();
     setTimeout(() => {
-        this.src = "assets/images/garlic.png";
+        clickedVeg.src = "assets/images/garlic.png";
     }, 200);
     score += 10;
     document.getElementById("score").innerHTML = score;
@@ -212,7 +238,8 @@ function secondsToStart() {
 }
 
 //event listeners
-veg.forEach((item) => item.addEventListener("click", smashAvocado));
+veg.forEach((item) => item.addEventListener("click", function() {
+    checkLevel(item);
+}));
 
 document.getElementById('playMusic').onToggle = togglePlay();
-
