@@ -214,15 +214,17 @@ function gameTimer() {
 
 //function to display seconds before the game starts
 function secondsToStart() {
-    document.getElementById("countdown").style.display = "block";
+        document.getElementById("secondsToStart").classList.remove('down');
     var seconds = 3;
+    document.getElementById("countdown").textContent = seconds;
     var countdown = setInterval(function () {
         seconds--;
         document.getElementById("countdown").textContent = seconds;
         if (seconds <= 0) clearInterval(countdown);
-    }, 1000);
+    }, 900);
     setTimeout(() => {
-        document.getElementById("secondsToStart").style.display = 'none';
+        document.getElementById("secondsToStart").classList.add('down');
+        //document.getElementById("secondsToStart").style.display = 'none';
     }, 3000);
 }
 
