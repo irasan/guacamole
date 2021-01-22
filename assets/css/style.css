@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
+html, body {
+    height: 100%;
+}
+
 body {
 min-width: fit-content;
 font-family: 'Varela Round', sans-serif;
 text-align: center;
+background-size: cover;
 }
 
 .top {
@@ -55,7 +60,45 @@ border-radius: 5px;
 /* Styles for game itself */
 .game {
 position: relative;
-width: 50%;
+background-color: yellow;
+overflow: hidden;
+}
+
+.box {
+display: block;
+width: 30%;
+margin-bottom: 10px;
+}
+
+.veg {
+display: inline-block;
+content: "";
+width: 90%;
+height: 66.6%;
+}
+
+.down {
+visibility: hidden;
+}
+
+.smashed {
+display: inline-block;
+width: 90%;
+height: 66.6%;
+}
+
+.bowl {
+display: inline-block;
+content: "";
+width: 90%;
+height: 33.3%;
+}
+
+@media only screen and (min-height: 960px){
+.game {
+height: 100vh;
+margin-top: 30px;
+position: relative;
 height: auto;
 background-color: yellow;
 overflow: hidden;
@@ -65,25 +108,14 @@ width: 900px;
 .box {
 display: block;
 height: 300px;
+margin-bottom: 20px;
 }
 
-.avocado {
+.veg {
 display: inline-block;
 content: "";
 width: 90%;
 height: 200px;
-}
-
-.tomato {
-content: url("assets/images/tomato.png");
-display: inline-block;
-content: "";
-width: 90%;
-height: 200px;
-}
-
-.garlic {
-content: url("assets/images/garlic.png");
 }
 
 .down {
@@ -101,6 +133,7 @@ display: inline-block;
 content: "";
 width: 90%;
 height: 100px;
+}
 }
 
 .scoreTimeDisplay {

@@ -4,7 +4,7 @@ $(document).on('click', '.toggleMusicButton', function () {
 });
 
 //variables
-var veg = document.querySelectorAll('.avocado');
+var veg = document.querySelectorAll('.veg');
 var bowls = document.querySelectorAll('.bowl');
 var timeUp = false;
 var smashSound = new sound("assets/audio/smash.wav");
@@ -37,12 +37,11 @@ function randomTime(min, max) {
 // function that makes an avocado to pop up
 function popUp1() {
     var activeAvocado = randomVeg(veg);
-    var popUpTime = randomTime(1000, 2500);
+    //activeAvocadoo.src = "assets/images/avocado1.png";
+    var popUpTime = randomTime(1500, 2500);
     activeAvocado.classList.remove('down');
-    console.log("continue");
     setTimeout(function () {
         activeAvocado.classList.add('down');
-        console.log("cont-2");
         if (!timeUp) {
             if(currentLevel != 1) {
                 return;
@@ -54,13 +53,11 @@ function popUp1() {
 
 function popUp2() {
     var activeTomato = randomVeg(veg);
-    var popUpTime = randomTime(900, 2000);
+    var popUpTime = randomTime(1000, 2200);
     activeTomato.src = "assets/images/tomato.png";
     activeTomato.classList.remove('down');
-    console.log("continue3");
     setTimeout(function () {
         activeTomato.classList.add('down');
-        console.log("cont-4");
         if (!timeUp) {
             if (currentLevel != 2) {
                 return;
@@ -73,12 +70,10 @@ function popUp2() {
 function popUp3() {
     var activeGarlic = randomVeg(veg);
     activeGarlic.src = "assets/images/garlic.png";
-    var popUpTime = randomTime(600, 1200);
+    var popUpTime = randomTime(900, 1500);
     activeGarlic.classList.remove('down');
-    console.log("continue5");
     setTimeout(function () {
         activeGarlic.classList.add('down');
-        console.log("cont-6");
         if (!timeUp) {
             if (currentLevel != 3) {
                 return;
@@ -117,9 +112,8 @@ function level1() {
 
 function level2() {
     currentLevel = 2;
-    console.log('check score 2');
     if (score < 80) {
-        message.innerText = "GAMEOVER!";
+        gameover();
         return;
     } else {
         timeUp = false;
@@ -136,9 +130,8 @@ function level2() {
 
 function level3() {
     currentLevel = 3;
-    console.log('check score 3');
     if (score < 150) {
-        alert("GAMEOVER!");
+        gameover();
         return;
     } else {
         timeUp = false;
@@ -164,16 +157,13 @@ function gameover() {
 
 //functions to smash the veggies and get scores
 function smashAvocado(clickedVeg) {
-    console.log(clickedVeg);
     clickedVeg.src = "assets/images/greenSmash.png";
     clickedVeg.style.pointerEvents = "none";
     smashSound.play();
     setTimeout(() => {
-        console.log("Reached reset point");
         clickedVeg.src = "assets/images/avocado1.png";
         clickedVeg.style.pointerEvents = "auto";
-
-    }, 500);
+    }, 1200);
     score += 10;
     document.getElementById("score").innerHTML = score;
     console.log(score);
@@ -184,19 +174,18 @@ function smashTomato(clickedVeg) {
     smashSound.play();
     setTimeout(() => {
         clickedVeg.src = "assets/images/tomato.png";
-    }, 200);
+    }, 1000);
     score += 10;
     document.getElementById("score").innerHTML = score;
     console.log(score);
 }
 
 function smashGarlic(clickedVeg) {
-    console.log("Clicked GARLIC");
-    clickedVeg.src = "assets/images/greenSmash.png";
+    clickedVeg.src = "assets/images/whiteSplash.jpg";
     smashSound.play();
     setTimeout(() => {
         clickedVeg.src = "assets/images/garlic.png";
-    }, 200);
+    }, 800);
     score += 10;
     document.getElementById("score").innerHTML = score;
     console.log(score);
