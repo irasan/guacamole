@@ -40,13 +40,14 @@ border: none;
 /* Styles for invitation to play */
 #welcomeAvocado {
 position: relative;
-width: 320px;
+width: 95%;
+height: auto;
 }
 
 #go {
 background-color: green;
 position: absolute;
-top: 50%;
+top: 55%;
 left: 50%;
 -ms-transform: translate(-50%, -50%);
 transform: translate(-50%, -50%);
@@ -60,11 +61,10 @@ border-radius: 5px;
 
 /* Styles for game itself */
 .game {
-width: 95%;
 position: relative;
 background-color: yellow;
 overflow: hidden;
-height: auto;
+width: 95%;
 }
 
 .box {
@@ -100,25 +100,65 @@ height: 33.3%;
 height: 10px;
 }
 
-@media (min-width: 500px){
+.scoreTimeDisplay {
+font-size: 22px;
+background-color: lightgreen;
+}
+
+#secondsToStart {
+width: 260px;
+height: 160px;
+background:rgba(15, 231, 15, 0.4);
+font-size: 2em;
+position: absolute;
+top: 50%;
+left: 50%;
+-ms-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%);
+border: 1px solid darkgreen;
+}
+
+#secondsToStart .hide {
+visibility: hidden;
+}
+
+#timer {
+width: 600px;
+height: 120px;
+border: 3px solid #cccccc;
+padding: 5px;
+}
+
+#score {
+width: 600px;
+height: 120px;
+border: 3px solid #cccccc;
+padding: 5px;
+}
+
+
+@media (min-width: 500px){ 
 #welcomeAvocado {
+position: relative;
 width: 480px;
+height: auto;
 }
 
 #go {
 padding: 8px 12px;
-top: 60%;
+top: 55%;
 left: 50%;
 -ms-transform: translate(-50%, -50%);
 transform: translate(-50%, -50%);
 }
 
 .game {
-width: 500px; 
+width: 480px;
+height: auto; 
 }
 }
 
-@media only screen and (min-width: 1200px){
+@media only screen and (min-width: 1400px){
 #welcomeAvocado {
 width: 900px;
 }
@@ -132,13 +172,12 @@ transform: translate(-50%, -50%);
 }
 
 .game {
-height: 100vh;
 margin-top: 30px;
 position: relative;
+width: 900px;
 height: auto;
 background-color: yellow;
 overflow: hidden;
-width: 900px;
 }
 
 .box {
@@ -176,36 +215,6 @@ height: 20px;
 }
 }
 
-.scoreTimeDisplay {
-font-size: 22px;
-background-color: green;
-}
-
-#countdown {
-font-size: 64px;
-position: absolute;
-top: 45%;
-left: 50%;
-}
-
-#countdown .hide {
-visibility: hidden;
-}
-
-#timer {
-width: 600px;
-height: 120px;
-border: 3px solid #cccccc;
-padding: 5px;
-}
-
-#score {
-width: 600px;
-height: 120px;
-border: 3px solid #cccccc;
-padding: 5px;
-}
-
 /* Styles for rules page */
 .rules {
     text-align: center;
@@ -220,6 +229,7 @@ padding: 5px;
 #goBack {
     color: darkgreen;
 }
+
 
 @media (min-width: 990px){
     #quacamole {

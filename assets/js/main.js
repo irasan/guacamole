@@ -112,7 +112,7 @@ function level1() {
 
 function level2() {
     currentLevel = 2;
-    if (score < 80) {
+    if (score < 60) {
         gameover();
         return;
     } else {
@@ -130,7 +130,7 @@ function level2() {
 
 function level3() {
     currentLevel = 3;
-    if (score < 150) {
+    if (score < 120) {
         gameover();
         return;
     } else {
@@ -222,7 +222,7 @@ function secondsToStart() {
         if (seconds <= 0) clearInterval(countdown);
     }, 1000);
     setTimeout(() => {
-        document.getElementById("countdown").style.display = 'none';
+        document.getElementById("secondsToStart").style.display = 'none';
     }, 3000);
 }
 
