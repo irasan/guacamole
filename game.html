@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Boostrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <!-- JS -->
+    <link rel="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" />
 
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
@@ -14,8 +14,8 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 
-    <!-- JS -->
-    <link rel="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" />
+    <!-- Boostrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -27,15 +27,17 @@
     <title>Guacamole</title>
 </head>
 
-<body onload ="startGame()">
+<body onload="startGame()">
     <header class="top">
-        <button onclick = "togglePlay()" class="toggleMusicButton" id="playMusic"><i class="fas fa-volume-off"></i> </button>
-        <button id="info"><i class="fas fa-times" onclick="window.location.href = 'index.html'" target="_parent"></i></button>
+        <button onclick="togglePlay()" class="toggleMusicButton" id="playMusic"><i class="fas fa-volume-off"></i>
+        </button>
+        <button id="info"><i class="fas fa-times" onclick="window.location.href = 'index.html'"
+                target="_parent"></i></button>
     </header>
 
     <div class="container-fluid game">
         <div class="row scoreTimeDisplay">
-            <div class="col-6">Score: 
+            <div class="col-6">Score:
                 <span id="score">0</span>
             </div>
             <div class="col-6">Time:
@@ -85,8 +87,28 @@
             </div>
         </div>
         <div class="empty"></div>
-        <div id="secondsToStart" class="down"><p>The game will start in </p>
+
+        <!-- Timer before the game starts -->
+        <div id="secondsToStart" class="down">
+            <p>The game will start in </p>
             <span id="countdown">3</span>
+        </div>
+
+        <!-- Gameover modal -->
+        <div class="modal hide fade">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3>Holy guacamole!</h3>
+            </div>
+            <div class="modal-body">
+                <p>Oooops! You didn't smash enough veggies to make a guacamole.
+                    <br> Wanna try again?
+                </p>
+            </div>
+            <div class="modal-footer">
+                <a href="game.html" class="btn">Yep!</a>
+                <a href="index.html" class="btn btn-primary">Nope!</a>
+            </div>
         </div>
     </div>
 

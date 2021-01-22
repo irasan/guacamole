@@ -107,9 +107,11 @@ To work on the project code within the local IDE:
 
 ## Credits
 ### Images
-Images for the game were downloaded from PNGTrees
+Images for the game were downloaded from [PNGTree](https://pngtree.com/)
 ### Sounds
 Smashing sounds were taken from [here](https://freesound.org/people/LittleRobotSoundFactory/sounds/290443/)
 Music for game for taken from [here](https://freesound.org/people/code_box/sounds/520931/)
+### Recipe
+Recipe of guacamole was borrowed [here](https://www.onceuponachef.com/recipes/roasted-garlic-guacamole.html)
 ### Borrowed Code
 Code for setting up a timer was borrowed from [here](https://tonnygaric.com/blog/create-a-seconds-countdown-in-6-lines-of-javascript)

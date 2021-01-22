@@ -151,8 +151,16 @@ function startGame() {
     gameMusic.play();
 }
 
+function showResults(){
+    if (score >= 200){
+        window.location.href = 'recipe.html';
+    } else {
+        gameover();
+    }
+}
+
 function gameover() {
-    alert("GAMEOVER!");
+    $('#myModal').modal('show');
 }
 
 //functions to smash the veggies and get scores
@@ -181,7 +189,7 @@ function smashTomato(clickedVeg) {
 }
 
 function smashGarlic(clickedVeg) {
-    clickedVeg.src = "assets/images/whiteSplash.jpg";
+    clickedVeg.src = "assets/images/whiteSplash.png";
     smashSound.play();
     setTimeout(() => {
         clickedVeg.src = "assets/images/garlic.png";
