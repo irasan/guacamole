@@ -28,16 +28,14 @@
 </head>
 
 <body>
-    <header>
-        <div class="top">
-        <button class="toggleMusicButton" id="playMusic"><i class="fas fa-volume-off"></i> </button>
+    <header class="top">
+        <button onclick = "togglePlay()" class="toggleMusicButton" id="playMusic"><i class="fas fa-volume-off"></i> </button>
         <button id="info"><i class="fas fa-info" onclick="window.location.href = 'rules.html'" target="_parent"></i></button>
-    </div>
 </header>
 
     <h1>Smash them all!</h1>
 
-    <div class="container">
+    <div class="container-fluid">
         <img src="assets/images/avocados.png" alt="avocados">
         <button id="go" onclick="window.location.href = 'game.html'"><i class="fas fa-play-circle fa-3x"></i></button>
     </div>

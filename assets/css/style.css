@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
+body {
+min-width: fit-content;
+font-family: 'Varela Round', sans-serif;
+text-align: center;
+}
+
 .top {
-    padding-bottom: 80px;
-    display: block;
-    margin: 0;
+padding-bottom: 80px;
 }
 
 #playMusic {
@@ -28,33 +32,19 @@ float: right;
 border: none;
 }
 
-h1 {
-    text-align: center;
-}
-
-body {
-font-family: 'Varela Round', sans-serif;
-text-align: center;
-}
-
 /* Styles for invitation to play */
-.container {
+.container-fluid {
 position: relative;
-width: 50%;
 }
 
-.container img {
-width: 100%;
-height: auto;
-}
-
-.container button {
+#go {
 background-color: green;
 position: absolute;
 top: 50%;
 left: 50%;
-transform: translate(-50%, -50%);
 -ms-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%);
+margin: auto;
 color: white;
 padding: 12px 24px;
 border: none;
@@ -147,16 +137,26 @@ padding: 5px;
 .rules {
     text-align: center;
     padding: 20px;
-    line-height: 60px;
-    font-size: 32px;
+    font-size: 26px;
 }
 
 #quacamole {
     height: 250px;
 }
 
+#goBack {
+    color: darkgreen;
+}
+
 @media (min-width: 990px){
     #quacamole {
     height: 400px;
+}
+
+.rules {
+    text-align: center;
+    padding: 20px;
+    line-height: 60px;
+    font-size: 32px;
 }
 }
