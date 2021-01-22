@@ -174,7 +174,6 @@ height: auto;
 #welcomeAvocado {
 position: relative;
 width: 60%;
-height: auto;
 }
 
 #go {
@@ -244,4 +243,18 @@ height: 20px;
     line-height: 60px;
     font-size: 32px;
 }
+}
+
+#myModal {
+width: 90vw;
+height: 35vh;
+background-color: white;
+color: black;
+opacity: 0.9 !important;
+margin: 20px;
+}
+
+.modal-header{
+background-color: darkgreen;
+color: white;
 }
