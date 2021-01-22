@@ -171,7 +171,7 @@ function smashAvocado(clickedVeg) {
     setTimeout(() => {
         clickedVeg.src = "assets/images/avocado1.png";
         clickedVeg.style.pointerEvents = "auto";
-    }, 1200);
+    }, 1000);
     score += 10;
     document.getElementById("score").innerHTML = score;
     console.log(score);
@@ -179,9 +179,11 @@ function smashAvocado(clickedVeg) {
 
 function smashTomato(clickedVeg) {
     clickedVeg.src = "assets/images/redSmash.png";
+    clickedVeg.style.pointerEvents = "none";
     smashSound.play();
     setTimeout(() => {
         clickedVeg.src = "assets/images/tomato.png";
+        clickedVeg.style.pointerEvents = "auto";
     }, 1000);
     score += 10;
     document.getElementById("score").innerHTML = score;
@@ -190,9 +192,11 @@ function smashTomato(clickedVeg) {
 
 function smashGarlic(clickedVeg) {
     clickedVeg.src = "assets/images/whiteSplash.png";
+    clickedVeg.style.pointerEvents = "none";
     smashSound.play();
     setTimeout(() => {
         clickedVeg.src = "assets/images/garlic.png";
+        clickedVeg.style.pointerEvents = "auto";
     }, 800);
     score += 10;
     document.getElementById("score").innerHTML = score;

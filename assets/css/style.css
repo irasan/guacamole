@@ -63,12 +63,11 @@ border-radius: 5px;
 }
 
 /* Styles for game itself */
-.game {
+#game {
 position: relative;
 background-color: yellow;
 overflow: hidden;
-width: 95vw;
-height: 55vh;
+width: 100vmin;
 }
 
 .box {
@@ -247,11 +246,12 @@ height: 20px;
 
 #myModal {
 width: 90vw;
-height: 35vh;
+height: 45vh;
 background-color: white;
 color: black;
 opacity: 0.9 !important;
 margin: 20px;
+font-size: 1.2rem;
 }
 
 .modal-header{
