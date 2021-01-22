@@ -38,9 +38,9 @@ border: none;
 }
 
 /* Styles for invitation to play */
-.welcome {
+#welcomeAvocado {
 position: relative;
-width: auto;
+width: 320px;
 }
 
 #go {
@@ -52,7 +52,7 @@ left: 50%;
 transform: translate(-50%, -50%);
 margin: auto;
 color: white;
-padding: 12px 24px;
+padding: 4px 8px;
 border: none;
 cursor: pointer;
 border-radius: 5px;
@@ -101,12 +101,36 @@ height: 10px;
 }
 
 @media (min-width: 500px){
-   .game {
+#welcomeAvocado {
+width: 480px;
+}
+
+#go {
+padding: 8px 12px;
+top: 60%;
+left: 50%;
+-ms-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%);
+}
+
+.game {
 width: 500px; 
 }
 }
 
-@media only screen and (min-height: 1200px){
+@media only screen and (min-width: 1200px){
+#welcomeAvocado {
+width: 900px;
+}
+
+#go {
+padding: 12px 24px;
+top: 100%;
+left: 50%;
+-ms-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%);
+}
+
 .game {
 height: 100vh;
 margin-top: 30px;
