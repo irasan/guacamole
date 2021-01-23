@@ -148,6 +148,7 @@ function level3() {
 }
 
 function startGame() {
+    document.getElementById("playNow").classList.add('down');
     level1();
     gameMusic.play();
 }

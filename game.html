@@ -18,7 +18,7 @@
     <title>Guacamole</title>
 </head>
 
-<body onload="startGame()">
+<body>
     <header class="top">
         <button onclick="togglePlay()" class="toggleMusicButton" id="playMusic"><i class="fas fa-volume-off"></i>
         </button>
@@ -78,6 +78,9 @@
             </div>
         </div>
         <div class="empty"></div>
+
+        <!-- Play button -->
+        <button id="playNow" onclick="startGame()"><i class="fas fa-play-circle fa-3x"></i></button>
 
         <!-- Timer before the game starts -->
         <div id="secondsToStart" class="down">
