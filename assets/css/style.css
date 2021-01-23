@@ -1,16 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
-html, body {
-height: 100%;
-}
-
 body {
-min-width: fit-content;
-min-width: -webkit-fit-content;
-min-width: -moz-fit-content;
 font-family: 'Varela Round', sans-serif;
 text-align: center;
-background-size: cover;
 }
 
 .top {
@@ -63,6 +55,10 @@ border-radius: 5px;
 }
 
 /* Styles for game itself */
+.container-fluid {
+width: 90vw;
+}
+
 #game {
 position: relative;
 background-color: yellow;
@@ -211,37 +207,36 @@ height: 100px;
 
 .empty {
 height: 20px;
-
-}
+    }
 }
 
 /* Styles for rules page */
 .rules {
-    text-align: center;
-    padding: 20px;
-    font-size: 26px;
+text-align: center;
+padding: 20px;
+font-size: 26px;
 }
 
 #quacamole {
-    height: 250px;
+height: 250px;
 }
 
 #goBack {
-    color: darkgreen;
+color: darkgreen;
 }
 
 
 @media (min-width: 990px){
-    #quacamole {
-    height: 400px;
+#quacamole {
+height: 400px;
 }
 
 .rules {
-    text-align: center;
-    padding: 20px;
-    line-height: 60px;
-    font-size: 32px;
-}
+text-align: center;
+padding: 20px;
+line-height: 60px;
+font-size: 32px;
+    }
 }
 
 #myModal {
@@ -257,4 +252,19 @@ font-size: 1.2rem;
 .modal-header{
 background-color: darkgreen;
 color: white;
+}
+
+.congrats {
+width: 80vw;
+margin: auto;
+}
+
+.congrats img {
+text-align: center;
+}
+
+#playAgain {
+margin-top: 20px;
+text-align: center;
+color: darkgreen;
 }
