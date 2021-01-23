@@ -83,17 +83,19 @@ overflow: hidden;
 width: 100vw;
 }
 
-.box {
+/* .box {
 display: block;
 width: 30%;
 height: 30%;
+} */
+
+.col-4 {
+padding: 0;
 }
 
 .veg {
-display: inline-block;
 content: "";
-width: 90%;
-height: 66.6%;
+width: 100%;
 }
 
 .down {
@@ -101,16 +103,12 @@ visibility: hidden;
 }
 
 .smashed {
-display: inline-block;
-width: 90%;
-height: 66.6%;
+width: 100%;
 }
 
 .bowl {
-display: inline-block;
 content: "";
 width: 100%;
-height: 33.3%;
 }
 
 .empty {
@@ -207,12 +205,13 @@ width: 900px;
 height: 950px;
 }
 
-.box {
+/* .box {
 display: block;
 height: 300px;
-}
+} */
 
 .veg {
+width: 100%;
 height: 200px;
 }
 
@@ -221,12 +220,12 @@ visibility: hidden;
 }
 
 .smashed {
-width: 90%;
+width: 100%;
 height: 200px;
 }
 
 .bowl {
-width: 90%;
+width: 100%;
 height: 100px;
 }
 
