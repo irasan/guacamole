@@ -89,12 +89,11 @@ width: 30%;
 height: 30%;
 } */
 
-.col-4 {
+/* .col-4 {
 padding: 0;
-}
+} */
 
 .veg {
-content: "";
 width: 100%;
 }
 
@@ -107,7 +106,6 @@ width: 100%;
 }
 
 .bowl {
-content: "";
 width: 100%;
 }
 
