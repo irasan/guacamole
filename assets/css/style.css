@@ -6,7 +6,7 @@ text-align: center;
 }
 
 .top {
-padding-bottom: 80px;
+padding-bottom: 30px;
 }
 
 #playMusic {
@@ -32,17 +32,22 @@ border: none;
 }
 
 /* Styles for invitation to play */
-#welcomeAvocado {
-position: relative;
-width: 95vw;
-height: auto;
+.welcome {
+margin-top: 30px;
+text-align: center;
 }
 
-#go {
+#welcomeAvocado {
+position: relative;
+width: 90vw;
+height: 50vh;
+}
+
+.welcome button {
 background-color: green;
 position: absolute;
 margin: 0;
-top: 50%;
+top: 40%;
 left: 50%;
 -ms-transform: translate(-50%, -50%);
 -webkit-transform: translate(-50%, -50%);
@@ -71,15 +76,11 @@ border-radius: 5px;
 }
 
 /* Styles for game itself */
-.container-fluid {
-width: 90vw;
-}
-
 #game {
 position: relative;
 background-color: yellow;
 overflow: hidden;
-width: 100vmin;
+width: 100vw;
 }
 
 .box {
@@ -165,9 +166,14 @@ width: 480px;
 height: auto;
 }
 
-#go {
-margin: 0;
+.welcome button {
 padding: 8px 12px;
+top: 50%;
+}
+
+#playNow {
+margin: 0;
+padding: 12px 24px;
 top: 50%;
 left: 50%;
 -ms-transform: translate(-50%, -50%);
@@ -175,26 +181,30 @@ left: 50%;
 transform: translate(-50%, -50%);
 }
 
-.game {
-width: 480px;
-height: auto; 
+#game {
+width: 75vh; 
+height: auto;
 }
 }
 
 @media only screen and (min-width: 1400px){
 #welcomeAvocado {
-position: relative;
-width: 60%;
+width: 900px;
+height: auto;
 }
 
 #go {
 padding: 12px 24px;
 }
 
+#playNow {
+padding: 12px 24px;
+}
+
 .game {
 margin-top: 30px;
 width: 900px;
-height: auto;
+height: 950px;
 }
 
 .box {
@@ -203,7 +213,6 @@ height: 300px;
 }
 
 .veg {
-width: 90%;
 height: 200px;
 }
 

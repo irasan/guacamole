@@ -40,7 +40,6 @@ function popUp1() {
     //activeAvocadoo.src = "assets/images/avocado1.png";
     var popUpTime = randomTime(1500, 2500);
     activeAvocado.classList.remove('down');
-    debugger;
     setTimeout(function () {
         activeAvocado.classList.add('down');
         if (!timeUp) {
