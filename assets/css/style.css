@@ -229,11 +229,6 @@ width: 80%;
 margin: auto;
 }
 
-#goBack {
-color: darkgreen;
-}
-
-
 @media (min-width: 990px){
 #quacamole {
 width: 600px;
