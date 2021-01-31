@@ -5,10 +5,6 @@ font-family: 'Varela Round', sans-serif;
 text-align: center;
 }
 
-.top {
-padding-bottom: 30px;
-}
-
 #playMusic {
 font-size: 32px;
 color: green;
@@ -38,6 +34,8 @@ text-align: center;
 
 #welcomeAvocado {
 position: relative;
+width: 80vw;
+height: auto;
 }
 
 #go {
@@ -107,6 +105,11 @@ height: 20px;
 .scoreTimeDisplay {
 font-size: 22px;
 background-color: lightgreen;
+}
+
+.highScore {
+font-size: 1.5rem;
+padding: 0 5px;  
 }
 
 #timer {

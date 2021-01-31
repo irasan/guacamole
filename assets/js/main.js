@@ -10,6 +10,7 @@ var timeUp = false;
 var smashSound = new sound("assets/audio/smash.wav");
 var gameMusic = new sound("assets/audio/gameMusic.wav");
 var score = 0;
+var highestScore = 0;
 var currentLevel = 1;
 
 function checkLevel(clickedVeg) {
@@ -43,7 +44,7 @@ function popUp1() {
     setTimeout(function () {
         activeAvocado.classList.add('down');
         if (!timeUp) {
-            if(currentLevel != 1) {
+            if (currentLevel != 1) {
                 return;
             }
             popUp1();
@@ -105,7 +106,8 @@ function level1() {
         gameTimer();
         setTimeout(() => {
             timeUp = true;
-            level2()}, 15000);
+            level2()
+        }, 15000);
     }, 3000);
     secondsToStart();
 }
@@ -113,6 +115,7 @@ function level1() {
 function level2() {
     currentLevel = 2;
     if (score < 60) {
+        updateScore();
         gameover();
         return;
     } else {
@@ -122,7 +125,8 @@ function level2() {
             gameTimer();
             setTimeout(() => {
                 timeUp = true;
-                level3()}, 15000);
+                level3()
+            }, 15000);
         }, 3000);
         secondsToStart();
     }
@@ -131,6 +135,7 @@ function level2() {
 function level3() {
     currentLevel = 3;
     if (score < 120) {
+        updateScore();
         gameover();
         return;
     } else {
@@ -140,7 +145,8 @@ function level3() {
             gameTimer();
             setTimeout(() => {
                 timeUp = true;
-                showResults()}, 15000);
+                showResults()
+            }, 15000);
         }, 3000);
         secondsToStart();
     }
@@ -151,8 +157,16 @@ function startGame() {
     level1();
 }
 
-function showResults(){
-    if (score >= 200){
+function updateScore() {
+    if (score > highscore) {
+        localStorage.setItem("highscore", score);
+        document.getElementById('highestScore').innerHTML = highScore;
+    }
+}
+
+function showResults() {
+    if (score >= 200) {
+        updateScore();
         $('#winModal').modal('show');
     } else {
         gameover();
@@ -226,7 +240,7 @@ function gameTimer() {
 
 //function to display seconds before the game starts
 function secondsToStart() {
-        document.getElementById("secondsToStart").classList.remove('down');
+    document.getElementById("secondsToStart").classList.remove('down');
     var seconds = 3;
     document.getElementById("countdown").textContent = seconds;
     var countdown = setInterval(function () {
@@ -241,7 +255,7 @@ function secondsToStart() {
 }
 
 //event listeners
-veg.forEach((item) => item.addEventListener("click", function() {
+veg.forEach((item) => item.addEventListener("click", function () {
     checkLevel(item);
 }));
 
