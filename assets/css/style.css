@@ -33,21 +33,18 @@ border: none;
 
 /* Styles for invitation to play */
 .welcome {
-margin-top: 30px;
 text-align: center;
 }
 
 #welcomeAvocado {
 position: relative;
-width: 90vw;
-height: 50vh;
 }
 
-.welcome button {
+#go {
 background-color: green;
 position: absolute;
 margin: 0;
-top: 42%;
+top: 50%;
 left: 50%;
 -ms-transform: translate(-50%, -50%);
 -webkit-transform: translate(-50%, -50%);
@@ -229,6 +226,7 @@ font-size: 26px;
 
 #quacamole {
 width: 80%;
+margin: auto;
 }
 
 #goBack {
@@ -238,7 +236,7 @@ color: darkgreen;
 
 @media (min-width: 990px){
 #quacamole {
-height: 400px;
+width: 600px;
 }
 
 .rules {
@@ -266,16 +264,13 @@ color: white;
 
 .congrats {
 width: 80vw;
-margin: auto;
-}
-
-.congrats img {
-text-align: center;
+margin-top: 20px;
+margin-left: auto;
+margin-right: auto;
 }
 
 #playAgain {
 margin-top: 20px;
 margin-bottom: 30px;
 text-align: center;
-color: darkgreen;
 }

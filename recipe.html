@@ -10,59 +10,74 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 
-    <!-- JS -->
-    <link rel="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" />
-
     <!-- Boostrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
+    <link rel="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" />
 
     <title>Guacamole</title>
 </head>
 
 <body>
-    <div class="congrats">
-        <h1>Congratulations!</h1>
-        <p>You proved to be a great veggie smasher and as a reward you get to see this super secret
-            guacamole recipe. Never ever share it with anybody else unless their smashing skills have been checked.
-        </p>
-        <h3>INGREDIENTS</h3>
-        <ul>
-            <li>3 large garlic cloves, unpeeled</li>
-            <li>3 ripe large avocados</li>
-            <li>1 small tomato, seeded, juiced and diced (about 1/3 cup)</li>
-            <li>1/4 cup coarsely chopped cilantro</li>
-            <li>1 jalapeño pepper, stemmed, seeded and minced</li>
-            <li>1 tablespoon fresh lime juice, plus more if desired (you'll need about 1/2 lime)</li>
-            <li>1/2 teaspoon salt, plus more to taste</li>
-        </ul>
-        <h3>Cooking instructions:</h3>
-        <ol>
-            <li>Begin by roasting the garlic: place the unpeeled garlic in a small skillet over medium heat.
-                Cook, turning occasionally, until soft and blackened in spots, 10 to 15 minutes.
-                Cool, then slip off the skins, and mash with a fork..</li>
-            <li>Cut the avocados in half lengthwise. Carefully strike the pits with the edge of a sharp knife,
-                then twist and loosen to remove. Holding each avocado half in the palm of your hand, use a butter knife
-                to cut a grid in the flesh. Use a spoon to scoop the cubes of flesh out of the skin and into a medium
-                bowl.</li>
-            <li>Add the roasted garlic, diced tomato, cilantro, jalapeño, lime juice and salt. Coarsely mash everything
-                together,
-                being careful to leave some chunks. Taste and add more salt and lime juice if desired.
-            </li>
-            <li>Transfer to a bowl and serve with tortilla chips.</li>
-        </ol>
-        <img id="quacamole" src="assets/images/guacamole.jpg" alt="guacamole">
-        <div id="playAgain">
-            <button onclick="window.location.href = 'game.html'">PLAY AGAIN</button>
+    <div class="container-fluid congrats">
+        <div class="congrats">
+            <h1>Congratulations!</h1>
+            <p>You proved to be a great veggie smasher and as a reward you get to see this super secret
+                guacamole recipe. Never ever share it with anybody else unless their smashing skills have been checked.
+            </p>
+            <div class="row">
+                <div class="col-sm-4">
+                    <img class="veg" src="assets/images/avocado1.png" alt="veg">
+                    <img class="veg" src="assets/images/tomato.png" alt="veg">
+                    <img class="veg" src="assets/images/garlic.png" alt="veg">
+                </div>
+                <div class="col-sm-8">
+            <h3>INGREDIENTS</h3>
+            <ul>
+                <li>3 large garlic cloves, unpeeled</li>
+                <li>3 ripe large avocados</li>
+                <li>1 small tomato, seeded, juiced and diced (about 1/3 cup)</li>
+                <li>1/4 cup coarsely chopped cilantro</li>
+                <li>1 jalapeño pepper, stemmed, seeded and minced</li>
+                <li>1 tablespoon fresh lime juice, plus more if desired (you'll need about 1/2 lime)</li>
+                <li>1/2 teaspoon salt, plus more to taste</li>
+            </ul>
+            <h3>Cooking instructions:</h3>
+            <ol>
+                <li>Begin by roasting the garlic: place the unpeeled garlic in a small skillet over medium heat.
+                    Cook, turning occasionally, until soft and blackened in spots, 10 to 15 minutes.
+                    Cool, then slip off the skins, and mash with a fork..</li>
+                <li>Cut the avocados in half lengthwise. Carefully strike the pits with the edge of a sharp knife,
+                    then twist and loosen to remove. Holding each avocado half in the palm of your hand, use a butter
+                    knife
+                    to cut a grid in the flesh. Use a spoon to scoop the cubes of flesh out of the skin and into a
+                    medium
+                    bowl.</li>
+                <li>Add the roasted garlic, diced tomato, cilantro, jalapeño, lime juice and salt. Coarsely mash
+                    everything
+                    together,
+                    being careful to leave some chunks. Taste and add more salt and lime juice if desired.
+                </li>
+                <li>Transfer to a bowl and serve with tortilla chips.</li>
+            </ol>
+            </div>
+            </div>
+            <img id="quacamole" src="assets/images/guacamole.jpg" alt="guacamole">
+            <div id="playAgain">
+                <button class="btn btn-success" onclick="window.location.href = 'game.html'">PLAY AGAIN</button>
+            
+            </div>
         </div>
     </div>
-
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
