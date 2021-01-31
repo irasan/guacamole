@@ -115,7 +115,7 @@ function level1() {
 function level2() {
     currentLevel = 2;
     if (score < 60) {
-        updateScore();
+        updateScore(score);
         gameover();
         return;
     } else {
@@ -135,7 +135,7 @@ function level2() {
 function level3() {
     currentLevel = 3;
     if (score < 120) {
-        updateScore();
+        updateScore(score);
         gameover();
         return;
     } else {
@@ -157,15 +157,20 @@ function startGame() {
     level1();
 }
 
-function updateScore() {
-    if (score > highscore) {
-        localStorage.setItem("highscore", score);
-        document.getElementById('highestScore').innerHTML = highScore;
+function updateScore(score) {
+    if(localStorage.getItem("highestScore") == null) {
+    var best = localStorage.setItem("highestScore", 0);
+}else {
+    var best = localStorage.getItem("highestScore");
+}
+    if (this.score > best) {
+        localStorage.highestScore = this.score;
+        document.getElementById('highestScore').innerHTML = localStorage.getItem('highestScore');
     }
 }
 
 function showResults() {
-    updateScore();
+    updateScore(score);
     if (score >= 200) {
         $('#winModal').modal('show');
     } else {
@@ -223,9 +228,9 @@ function togglePlay() {
 }
 
 //function to store highest score
-function saveScore(score) {
-    localStorage.highestScore = this.score;
-}
+// function saveScore(score) {
+//     localStorage.highestScore = this.score;
+// }
 
 //function to display timer
 function gameTimer() {

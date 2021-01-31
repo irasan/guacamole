@@ -3,12 +3,15 @@
 body {
 font-family: 'Varela Round', sans-serif;
 text-align: center;
-max-height: 100vh !important;
 background-color: #e0e024;
 }
 
+#top {
+    margin-bottom: 0;
+}
+
 #playMusic {
-font-size: 32px;
+font-size: 1.6rem;
 color: green;
 width:60px;
 height:60px; 
@@ -19,7 +22,7 @@ border: none;
 }
 
 #info {
-font-size: 32px;
+font-size: 1.6rem;
 color: green;
 width:60px;
 height:60px;  
@@ -27,6 +30,11 @@ display: block;
 margin: auto;
 float: right; 
 border: none;
+}
+
+.highScore {
+font-size: 1.5rem;
+padding: 0 5px;  
 }
 
 /* Styles for invitation to play */
@@ -108,21 +116,13 @@ font-size: 22px;
 background-color: lightgreen;
 }
 
-.highScore {
-font-size: 1.5rem;
-padding: 0 5px;  
-}
-
 #timer {
-width: 600px;
-height: 120px;
 border: 3px solid #cccccc;
 padding: 0 5px;
+border-radius: 5px;
 }
 
 #score {
-width: 600px;
-height: 120px;
 border: 3px solid #cccccc;
 padding: 0 5px;
 }
@@ -131,7 +131,7 @@ padding: 0 5px;
 width: 160px;
 height: 120px;
 background:rgba(15, 231, 15, 0.4);
-font-size: 24px;
+font-size: 1.8rem;
 text-align: center;
 position: absolute;
 top: 50%;
@@ -147,7 +147,7 @@ border: 1px solid darkgreen;
 width: 260px;
 height: 160px;
 background:rgba(15, 231, 15, 0.4);
-font-size: 2em;
+font-size: 2rem;
 }
 
 #welcomeAvocado {
@@ -171,7 +171,8 @@ transform: translate(-50%, -50%);
 }
 
 #game {
-max-height: 100%; 
+width: 500px;
+height: auto;
 }
 }
 
@@ -188,7 +189,7 @@ padding: 12px 24px;
 padding: 12px 24px;
 }
 
-.game {
+#game {
 margin-top: 30px;
 width: 900px;
 height: 950px;
