@@ -165,8 +165,8 @@ function updateScore() {
 }
 
 function showResults() {
+    updateScore();
     if (score >= 200) {
-        updateScore();
         $('#winModal').modal('show');
     } else {
         gameover();

@@ -3,6 +3,8 @@
 body {
 font-family: 'Varela Round', sans-serif;
 text-align: center;
+max-height: 100vh !important;
+background-color: #e0e024;
 }
 
 #playMusic {
@@ -75,7 +77,6 @@ border-radius: 5px;
 position: relative;
 background-color: yellow;
 overflow: hidden;
-width: 100vw;
 }
 
 .col-4 {
@@ -170,8 +171,7 @@ transform: translate(-50%, -50%);
 }
 
 #game {
-width: 75vh; 
-height: 650px;
+max-height: 100%; 
 }
 }
 
