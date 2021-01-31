@@ -160,6 +160,8 @@ Music for game for taken from [here](https://freesound.org/people/code_box/sound
 ### Recipe
 Recipe of guacamole was borrowed [here](https://www.onceuponachef.com/recipes/roasted-garlic-guacamole.html)
 ### Borrowed Code
-Code for setting up a timer was borrowed from [here](https://tonnygaric.com/blog/create-a-seconds-countdown-in-6-lines-of-javascript)
-The developer has been constantly relating to [Stack Overflow website](https://stackoverflow.com/), [W3School tutorials](https://www.w3schools.com/),
-[Bootstrap documentation](https://getbootstrap.com/docs), and some other forums.
+The overall logic of the game was inspired by [this](https://github.com/JS-Beginners/whack-a-mole-project). Code for Bootstrap components, 
+such as buttons, game layout, and modals was taken from [Bootstrap documentation](https://getbootstrap.com/docs).
+Code for setting up a timer was borrowed from [here](https://tonnygaric.com/blog/create-a-seconds-countdown-in-6-lines-of-javascript).
+[Stack Overflow website](https://stackoverflow.com/) and [W3School tutorials](https://www.w3schools.com/)
+were used when dealing with some specific issues. 

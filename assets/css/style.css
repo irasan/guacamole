@@ -240,7 +240,8 @@ font-size: 32px;
     }
 }
 
-#myModal {
+/* Styles for modals */
+.modal {
 width: 90vw;
 height: 45vh;
 background-color: white;
@@ -255,6 +256,7 @@ background-color: darkgreen;
 color: white;
 }
 
+/* Styles for recipe page */
 .congrats {
 width: 80vw;
 margin-top: 20px;

@@ -153,14 +153,14 @@ function startGame() {
 
 function showResults(){
     if (score >= 200){
-        window.location.href = 'recipe.html';
+        $('#winModal').modal('show');
     } else {
         gameover();
     }
 }
 
 function gameover() {
-    $('#myModal').modal('show');
+    $('#gameoverModal').modal('show');
 }
 
 //functions to smash the veggies and get scores
