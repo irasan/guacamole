@@ -226,7 +226,7 @@ function gameover() {
 
 //functions to smash the veggies and get scores
 function smashAvocado(clickedVeg) {
-    clickedVeg.src = "assets/images/greenSmash.png";
+    clickedVeg.src = "assets/images/green-smash.png";
     clickedVeg.style.pointerEvents = "none";
     smashSound.play();
     score += 10;
@@ -235,7 +235,7 @@ function smashAvocado(clickedVeg) {
 }
 
 function smashTomato(clickedVeg) {
-    clickedVeg.src = "assets/images/redSmash.png";
+    clickedVeg.src = "assets/images/red-smash.png";
     clickedVeg.style.pointerEvents = "none";
     smashSound.play();
     score += 10;
@@ -244,7 +244,7 @@ function smashTomato(clickedVeg) {
 }
 
 function smashGarlic(clickedVeg) {
-    clickedVeg.src = "assets/images/whiteSplash.png";
+    clickedVeg.src = "assets/images/white-smash.png";
     clickedVeg.style.pointerEvents = "none";
     smashSound.play();
     score += 10;
