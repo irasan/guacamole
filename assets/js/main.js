@@ -1,8 +1,3 @@
-$(document).on('click', '.toggleMusicButton', function () {
-    icon = $(this).find("i");
-    icon.toggleClass('fa-volume-mute fa-volume-off');
-});
-
 //variables
 var veg = document.querySelectorAll('.veg');
 var bowls = document.querySelectorAll('.bowl');
@@ -12,7 +7,35 @@ var gameMusic = new sound("assets/audio/gameMusic.wav");
 var score = 0;
 var highestScore = 0;
 var currentLevel = 1;
+localStorage.setItem("isToggled", "true");
 
+$(".toggleMusicButton").on('click', function () {
+    if (localStorage.getItem('isToggled') == null) {
+        localStorage.setItem('isToggled', 'false')
+        isToggled = "false";
+    } else {
+        isToggled = localStorage.getItem("isToggled");
+    }
+    if (isToggled == 'false') {
+        localStorage.setItem('isToggled', true);
+    } else {
+        localStorage.setItem('isToggled', false);
+    }
+    icon = $(this).find("i");
+    icon.toggleClass('fa-volume-mute fa-volume-off');
+});
+
+// function to play and pause game music
+function togglePlay() {
+    isToggled = localStorage.getItem('isToggled');
+    if (isToggled == 'true') {
+        gameMusic.play();
+    } else {
+        gameMusic.stop();
+    }
+}
+
+// function to check what round of the game is now on
 function checkLevel(clickedVeg) {
     if (currentLevel == 1) {
         smashAvocado(clickedVeg);
@@ -38,8 +61,7 @@ function randomTime(min, max) {
 // function that makes an avocado to pop up
 function popUp1() {
     var activeAvocado = randomVeg(veg);
-    //activeAvocadoo.src = "assets/images/avocado1.png";
-    var popUpTime = randomTime(1500, 2500);
+    var popUpTime = randomTime(1800, 2500);
     activeAvocado.classList.remove('down');
     setTimeout(function () {
         activeAvocado.classList.add('down');
@@ -54,7 +76,7 @@ function popUp1() {
 
 function popUp2() {
     var activeTomato = randomVeg(veg);
-    var popUpTime = randomTime(1000, 2200);
+    var popUpTime = randomTime(1000, 2000);
     activeTomato.src = "assets/images/tomato.png";
     activeTomato.classList.remove('down');
     setTimeout(function () {
@@ -71,7 +93,7 @@ function popUp2() {
 function popUp3() {
     var activeGarlic = randomVeg(veg);
     activeGarlic.src = "assets/images/garlic.png";
-    var popUpTime = randomTime(900, 1500);
+    var popUpTime = randomTime(800, 1500);
     activeGarlic.classList.remove('down');
     setTimeout(function () {
         activeGarlic.classList.add('down');
@@ -153,19 +175,18 @@ function level3() {
 }
 
 function startGame() {
-    // document.getElementById('highScore').innerText = localStorage.getItem('highestScore');
     document.getElementById("playNow").classList.add('down');
     level1();
 }
 
+// function to update highest score
 function updateScore(score) {
     if (localStorage.getItem('highestScore') == null) {
         highestScore = localStorage.setItem('highestScore', JSON.stringify(0));
     } else {
         highestScore = localStorage.getItem("highestScore");
     }
-   var checkCheck = localStorage.getItem('highestScore'); 
-        console.log(checkCheck);
+
     if (this.score > highestScore) {
         highestScore = score;
         localStorage.setItem('highestScore', JSON.stringify(highestScore));
@@ -173,10 +194,12 @@ function updateScore(score) {
     document.getElementById('highScore').innerText = localStorage.getItem('highestScore');
 }
 
+// function to display highest score
 function getScore() {
     document.getElementById('highScore').innerText = localStorage.getItem('highestScore');
 }
 
+// function in the end of game
 function showResults() {
     updateScore(score);
     if (score >= 200) {
@@ -230,16 +253,6 @@ function smashGarlic(clickedVeg) {
     console.log(score);
 }
 
-// function to play and pause game music
-function togglePlay() {
-    return gameMusic.sound.paused ? gameMusic.play() : gameMusic.stop();
-}
-
-//function to store highest score
-// function saveScore(score) {
-//     localStorage.highestScore = this.score;
-// }
-
 //function to display timer
 function gameTimer() {
     seconds = 15;
@@ -263,7 +276,6 @@ function secondsToStart() {
     }, 900);
     setTimeout(() => {
         document.getElementById("secondsToStart").classList.add('down');
-        //document.getElementById("secondsToStart").style.display = 'none';
     }, 3000);
 }
 
@@ -271,5 +283,3 @@ function secondsToStart() {
 veg.forEach((item) => item.addEventListener("click", function () {
     checkLevel(item);
 }));
-
-document.getElementById('playMusic').onToggle = togglePlay();
