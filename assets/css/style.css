@@ -87,6 +87,8 @@ overflow: hidden;
 
 .veg {
 width: 100%;
+animation-duration: 0.5s;
+animation-fill-mode: forwards;
 }
 
 .down {

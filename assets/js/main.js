@@ -60,50 +60,55 @@ function randomTime(min, max) {
 
 // function that makes an avocado to pop up
 function popUp1() {
-    var activeAvocado = randomVeg(veg);
-    var popUpTime = randomTime(1800, 2500);
-    activeAvocado.classList.remove('down');
-    setTimeout(function () {
-        activeAvocado.classList.add('down');
-        if (!timeUp) {
+    if (!timeUp) {
+        var activeAvocado = randomVeg(veg);
+        var popUpTime = randomTime(1800, 2500);
+        activeAvocado.src = "assets/images/avocado1.png";
+        activeAvocado.style.pointerEvents = "auto";
+        activeAvocado.classList.remove('down');
+        setTimeout(function () {
+            activeAvocado.classList.add('down');
             if (currentLevel != 1) {
                 return;
             }
             popUp1();
-        }
-    }, popUpTime);
+        }, popUpTime);
+    }
 }
 
 function popUp2() {
-    var activeTomato = randomVeg(veg);
-    var popUpTime = randomTime(1000, 2000);
-    activeTomato.src = "assets/images/tomato.png";
-    activeTomato.classList.remove('down');
-    setTimeout(function () {
-        activeTomato.classList.add('down');
-        if (!timeUp) {
+    if (!timeUp) {
+        var activeTomato = randomVeg(veg);
+        var popUpTime = randomTime(1000, 2000);
+        activeTomato.src = "assets/images/tomato.png";
+        activeTomato.style.pointerEvents = "auto";
+        activeTomato.classList.remove('down');
+        setTimeout(function () {
+            activeTomato.classList.add('down');
             if (currentLevel != 2) {
                 return;
             }
             popUp2();
-        }
-    }, popUpTime);
+
+        }, popUpTime);
+    }
 }
 
 function popUp3() {
-    var activeGarlic = randomVeg(veg);
-    activeGarlic.src = "assets/images/garlic.png";
-    var popUpTime = randomTime(800, 1500);
-    activeGarlic.classList.remove('down');
-    setTimeout(function () {
-        activeGarlic.classList.add('down');
-        if (!timeUp) {
+    if (!timeUp) {
+        var activeGarlic = randomVeg(veg);
+        var popUpTime = randomTime(800, 1500);
+        activeGarlic.src = "assets/images/garlic.png";
+        activeGarlic.style.pointerEvents = "auto";
+        activeGarlic.classList.remove('down');
+        setTimeout(function () {
+            activeGarlic.classList.add('down');
             if (currentLevel != 3) {
                 return;
             }
             popUp3();
-        }
-    }, popUpTime);
+        }, popUpTime);
+    }
 }
 
 function sound(src) {
@@ -128,7 +133,13 @@ function level1() {
         gameTimer();
         setTimeout(() => {
             timeUp = true;
-            level2()
+            updateScore(score);
+            if (score > 60) {
+                level2();
+            } else {
+                gameover();
+                return;
+            }
         }, 15000);
     }, 3000);
     secondsToStart();
@@ -136,42 +147,42 @@ function level1() {
 
 function level2() {
     currentLevel = 2;
-    if (score < 60) {
-        updateScore(score);
-        gameover();
-        return;
-    } else {
-        timeUp = false;
-        setTimeout(function () {
-            popUp2();
-            gameTimer();
-            setTimeout(() => {
-                timeUp = true;
-                level3()
-            }, 15000);
-        }, 3000);
-        secondsToStart();
-    }
+    for (i = 0; i < veg.length; i++) {
+        veg[i].src = "assets/images/tomato.png";
+    };
+    timeUp = false;
+    setTimeout(function () {
+        popUp2();
+        gameTimer();
+        setTimeout(() => {
+            timeUp = true;
+            updateScore();
+            if (score > 120) {
+                level3();
+            } else {
+                gameover();
+                return;
+            }
+        }, 15000);
+    }, 3000);
+    secondsToStart();
 }
 
 function level3() {
     currentLevel = 3;
-    if (score < 120) {
-        updateScore(score);
-        gameover();
-        return;
-    } else {
-        timeUp = false;
-        setTimeout(function () {
-            popUp3();
-            gameTimer();
-            setTimeout(() => {
-                timeUp = true;
-                showResults()
-            }, 15000);
-        }, 3000);
-        secondsToStart();
-    }
+    for (i = 0; i < veg.length; i++) {
+        veg[i].src = "assets/images/garlic.png";
+    };
+    timeUp = false;
+    setTimeout(function () {
+        popUp3();
+        gameTimer();
+        setTimeout(() => {
+            timeUp = true;
+            showResults()
+        }, 15000);
+    }, 3000);
+    secondsToStart();
 }
 
 function startGame() {
@@ -218,10 +229,6 @@ function smashAvocado(clickedVeg) {
     clickedVeg.src = "assets/images/greenSmash.png";
     clickedVeg.style.pointerEvents = "none";
     smashSound.play();
-    setTimeout(() => {
-        clickedVeg.src = "assets/images/avocado1.png";
-        clickedVeg.style.pointerEvents = "auto";
-    }, 1000);
     score += 10;
     document.getElementById("score").innerHTML = score;
     console.log(score);
@@ -231,10 +238,6 @@ function smashTomato(clickedVeg) {
     clickedVeg.src = "assets/images/redSmash.png";
     clickedVeg.style.pointerEvents = "none";
     smashSound.play();
-    setTimeout(() => {
-        clickedVeg.src = "assets/images/tomato.png";
-        clickedVeg.style.pointerEvents = "auto";
-    }, 1000);
     score += 10;
     document.getElementById("score").innerHTML = score;
     console.log(score);
@@ -244,10 +247,6 @@ function smashGarlic(clickedVeg) {
     clickedVeg.src = "assets/images/whiteSplash.png";
     clickedVeg.style.pointerEvents = "none";
     smashSound.play();
-    setTimeout(() => {
-        clickedVeg.src = "assets/images/garlic.png";
-        clickedVeg.style.pointerEvents = "auto";
-    }, 800);
     score += 10;
     document.getElementById("score").innerHTML = score;
     console.log(score);
