@@ -34,7 +34,7 @@ border: 1px solid darkgreen;
 }
 
 .highScore {
-font-size: 1.5rem;
+font-size: 1.4rem;
 padding: 0 5px;  
 }
 
@@ -241,7 +241,7 @@ font-size: 32px;
 
 /* Styles for modals */
 .modal {
-width: 60vw;
+width: 80vw;
 height: auto;
 background-color: white;
 color: black;
@@ -257,7 +257,7 @@ color: white;
 
 /* Styles for recipe page */
 .congratsHeader {
-width: 80vw;
+width: 90%;
 margin: 20px auto;
 }
 
@@ -280,7 +280,7 @@ margin-right: auto;
 }
 
 #avocadoWin {
-    width: 100%;
+width: 100%;
 }
 
 #playAgain button {

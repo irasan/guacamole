@@ -17,17 +17,16 @@ The game promotes quick decision making and concentration so it also can be used
 Player's goals are:
 * to play a fun game;
 * to see the best score and try to beat it;
-* to score at least 200 points and see the guacamole recipe;
-* to be able to mute and unmute the music.
+* to score at least 200 points in order to win and see the guacamole recipe.
 
 ### User Stories
 As a first time player, I want:
 * to understand the rules or be able to find them;
 * to be able to navigate the game easily;
-* to be able to turn the music off if necessary.
+* to be able to turn the music on and off if necessary.
 
 As a return player, I want:
-* to see my previous score;
+* to see my previous best score;
 * to be able to increase the complexity of the game.
 
 ### Wireframes
@@ -39,8 +38,8 @@ and interactive design implementation. Another very improtant goal is to build a
 that will be added to the portfolio. 
 
 ### Design Choices
-The overall feel of the game is fun, simple and relaxed. Even though the game itself is intense,
-the following design choices were made to implement the cheerful feeling:
+The overall feel of the game is fun, simple and relaxed. The following design choices were made 
+in order to implement the game:
 
 #### Fonts
 Varela Round was chosen as the main font for this website. It is soft, playfull, easy to read, and works great 
@@ -51,46 +50,50 @@ All icons were chosen for their obvious meaning so that they can be easily under
 Icons were implemented using [Font Awesome](https://fontawesome.com/).
 
 #### Colors and Styling
-Simple animation images were chosen for implementation of the game. They are not either overwhelming or disctucting. 
+Simple animation images were chosen for this game. They are not either overwhelming or disctacting. 
 Dark green color that reminds of avocadoes is used for icons and buttons. 
-Overall feel of the game is cheerful, bright, and playful.
+Overall design of the game is cheerful, bright, and playful.
 
 ## Features
 This website features 4 pages: Home, Rules, Game, and Recipe. Home page features a fun image of avocadoes and a button 
-with invitation to play. An incouraging message "Smash them all!" appears at the top. Home screen also contains two other 
+with invitation to play. An encouraging message "Smash them all!" appears at the top. Home screen also contains two other 
 buttons: one for muting/unmuting music and the other for visiting Rules page.
 
-Rules page contains a short description of how to play the game, an image of yummy guacamole, and a return button.
+Rules page contains a short description of how to play the game, an image of yummy guacamole, and two buttons at the bottom: 
+one for returning back to Home page, the other for starting the game.
 
 Game page features a yellow game field with a button to start the game. When clicked, the game will start showing a countdown 
 timer of 3 seconds for the player to get ready. The same timer will appear before each round. 
 The game consists of 3 rounds and the player has to score enough points to move to the next level. If he doesn't succeed, the game will be over.
-Each level displays different veggies with increased speed. If a player manages to smash a veg, he'll see a different image of a smash.
-Game page also contains two button: one for muting/unmuting music and the other for closing the game.
+Each level displays different veggies with increased speed. If a player manages to smash a veg, he'll see a smashing image.
+Game page also contains two buttons: one for muting/unmuting music and the other for closing the game.
 
-If the player scores 200 points or more, he'll see a Recipe page. It contains a congratulation message together with a super secret guacamole 
-recipe. It also features an image of how the end product, eg guacamole with tortilla chips, should look like.
+If the player scores 200 points or more, he'll see a dialog window asking if he/she wants to play again or visit the Recipe page. 
+Recipe page displays a congratulation message together with a super secret guacamole recipe. It also features an image of how the 
+end product, eg guacamole with tortilla chips, should look like. At the bottom the player will find two buttons: 
+one for returning back to Home page, and the other for playing the game.
 
 ### Existing Features
 * The game is fully functioning and fun to play;
 * Call for action buttons - helps users to take control over when to start playing and navigate the site;
-* Toggle button for turning music on and off.
+* Toggle button for turning music on and off. The state of the toggle button is saved throughout the website;
+* Highest score is stored in local storage and displayed during the game.
 
 ### Features Left To implement
 * There is no pause button when the game is on.
-* At the moment the player only sees one kind of veg on each round. Displaying of different veggies with different value, as 
+* At the moment the player only sees one kind of veg on each round. Displaying of different veggies with different values, as 
 well as some bombs or knives that shouldn't be clicked, were left for future development.
 
 ## Technologies used
 During completion of this project mainly HTML, CSS and JavaScript were used. To implement some more advanced components, 
-like grid of the game, gameover modal, and buttons, the developer made use of Bootstrap 4. To create the project, in particular 
+like grid of the game, layouts, and modals the developer made use of Bootstrap 4. To create the project, in particular 
 write the code itself and store it, GitPod and GitHub were used. Deployment of the website was supported by GitHub pages.
 
 ## Testing
 ### Testing Using Validators
 The website was continuously tested on emulated large and small screens when writing the code. 
-Upon completion of the writing process, developer used W3C Css Validation Service and W3C MarkUp Validation Service 
-to check the validity of the code. 
+Upon completion of the writing process, developer used [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) 
+and [W3C MarkUp Validation Service](https://validator.w3.org/) to check the validity of the code. 
 
 ### Client Stories Testing
 Most common path through the website: Home -> (Rules) -> Game -> Recipe.
@@ -108,7 +111,7 @@ As a first time player, I want to be able to turn the music off if necessary:
 * there's a button with widely recognized volume icon that toggles game music. The icon also changes when toggled.
 
 As a return player, I want to see my previous score:
-* the highest score is stored in browser memory and is displayed during the game;
+* the highest score is stored in local memory and is displayed during the game.
 
 As a return player, I want to be able to increase the complexity of the game:
 * this feature was left for future development.
