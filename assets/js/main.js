@@ -153,20 +153,28 @@ function level3() {
 }
 
 function startGame() {
+    // document.getElementById('highScore').innerText = localStorage.getItem('highestScore');
     document.getElementById("playNow").classList.add('down');
     level1();
 }
 
 function updateScore(score) {
-    if(localStorage.getItem("highestScore") == null) {
-    var best = localStorage.setItem("highestScore", 0);
-}else {
-    var best = localStorage.getItem("highestScore");
-}
-    if (this.score > best) {
-        localStorage.highestScore = this.score;
-        document.getElementById('highestScore').innerHTML = localStorage.getItem('highestScore');
+    if (localStorage.getItem('highestScore') == null) {
+        highestScore = localStorage.setItem('highestScore', JSON.stringify(0));
+    } else {
+        highestScore = localStorage.getItem("highestScore");
     }
+   var checkCheck = localStorage.getItem('highestScore'); 
+        console.log(checkCheck);
+    if (this.score > highestScore) {
+        highestScore = score;
+        localStorage.setItem('highestScore', JSON.stringify(highestScore));
+    };
+    document.getElementById('highScore').innerText = localStorage.getItem('highestScore');
+}
+
+function getScore() {
+    document.getElementById('highScore').innerText = localStorage.getItem('highestScore');
 }
 
 function showResults() {

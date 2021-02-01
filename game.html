@@ -8,17 +8,17 @@
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
-
     <!-- Boostrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <link rel="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" />
 
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+
     <title>Guacamole</title>
 </head>
 
-<body>
+<body onload = "getScore()">
     <header>
         <ul id="top" class="navbar navbar-light bg-light list-unstyled">
             <li class="nav-item">
@@ -27,7 +27,7 @@
                 </button>
             </li>
             <li class="nav-item highScore">
-                <div><h4>Highest score: <span id="highestScore"> </span></h4></div>
+                <div><h4>Highest score: <span id="highScore"> 0 </span></h4></div>
             </li>
             <li class="nav-item">
                 <button id="info"><i class="fas fa-times" onclick="window.location.href = 'index.html'"
