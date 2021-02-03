@@ -9,10 +9,11 @@ var highestScore = 0;
 var currentLevel = 1;
 localStorage.setItem("isToggled", "true");
 
+//function to save the state of music toggle button across the site and change icons accordingly
 $(".toggleMusicButton").on('click', function () {
     if (localStorage.getItem('isToggled') == null) {
         localStorage.setItem('isToggled', 'false')
-        isToggled = "false";
+        isToggled = "true";
     } else {
         isToggled = localStorage.getItem("isToggled");
     }
@@ -76,6 +77,7 @@ function popUp1() {
     }
 }
 
+// function that makes a tomato to pop up
 function popUp2() {
     if (!timeUp) {
         var activeTomato = randomVeg(veg);
@@ -94,6 +96,7 @@ function popUp2() {
     }
 }
 
+// function that makes garlic to pop up
 function popUp3() {
     if (!timeUp) {
         var activeGarlic = randomVeg(veg);
@@ -111,6 +114,7 @@ function popUp3() {
     }
 }
 
+//general function for playing sounds (This code was borrowed - see README.md).
 function sound(src) {
     this.sound = document.createElement("audio");
     this.sound.src = src;
@@ -126,6 +130,7 @@ function sound(src) {
     };
 }
 
+//function to invoke level 1
 function level1() {
     currentLevel = 1;
     setTimeout(function () {
@@ -145,6 +150,7 @@ function level1() {
     secondsToStart();
 }
 
+//function to invoke level 2
 function level2() {
     currentLevel = 2;
     for (i = 0; i < veg.length; i++) {
@@ -168,6 +174,7 @@ function level2() {
     secondsToStart();
 }
 
+//function to invoke level 3
 function level3() {
     currentLevel = 3;
     for (i = 0; i < veg.length; i++) {
@@ -185,6 +192,7 @@ function level3() {
     secondsToStart();
 }
 
+//function that starts the game on clicking the play button
 function startGame() {
     document.getElementById("playNow").classList.add('down');
     level1();
@@ -210,7 +218,7 @@ function getScore() {
     document.getElementById('highScore').innerText = localStorage.getItem('highestScore');
 }
 
-// function in the end of game
+// function to end of game (win or lose)
 function showResults() {
     updateScore(score);
     if (score >= 200) {
@@ -220,11 +228,12 @@ function showResults() {
     }
 }
 
+//gameover function
 function gameover() {
     $('#gameoverModal').modal('show');
 }
 
-//functions to smash the veggies and get scores
+//functions to smash the avocados and get scores
 function smashAvocado(clickedVeg) {
     clickedVeg.src = "assets/images/green-smash.png";
     clickedVeg.style.pointerEvents = "none";
@@ -234,6 +243,7 @@ function smashAvocado(clickedVeg) {
     console.log(score);
 }
 
+//functions to smash tomatoes and get scores
 function smashTomato(clickedVeg) {
     clickedVeg.src = "assets/images/red-smash.png";
     clickedVeg.style.pointerEvents = "none";
@@ -243,6 +253,7 @@ function smashTomato(clickedVeg) {
     console.log(score);
 }
 
+//functions to smash garlic and get scores
 function smashGarlic(clickedVeg) {
     clickedVeg.src = "assets/images/white-smash.png";
     clickedVeg.style.pointerEvents = "none";
@@ -252,7 +263,7 @@ function smashGarlic(clickedVeg) {
     console.log(score);
 }
 
-//function to display timer
+//function to display game timer (borrowed code - see README.md)
 function gameTimer() {
     seconds = 15;
     var countdown = setInterval(function () {
@@ -260,10 +271,9 @@ function gameTimer() {
         document.getElementById("timer").textContent = seconds;
         if (seconds <= 0) clearInterval(countdown);
     }, 1000);
-
 }
 
-//function to display seconds before the game starts
+//function to display seconds before the game starts (borrowed code - see README.md) 
 function secondsToStart() {
     document.getElementById("secondsToStart").classList.remove('down');
     var seconds = 3;
@@ -278,7 +288,7 @@ function secondsToStart() {
     }, 3000);
 }
 
-//event listeners
+//event listener
 veg.forEach((item) => item.addEventListener("click", function () {
     checkLevel(item);
 }));

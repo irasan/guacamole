@@ -166,6 +166,7 @@ Recipe of guacamole was borrowed [here](https://www.onceuponachef.com/recipes/ro
 The overall logic of the game was inspired by [this](https://github.com/JS-Beginners/whack-a-mole-project). Code for Bootstrap components, 
 such as buttons, game layout, and modals was taken from [Bootstrap documentation](https://getbootstrap.com/docs).
 Code for setting up a timer was borrowed from [here](https://tonnygaric.com/blog/create-a-seconds-countdown-in-6-lines-of-javascript).
+General function for playing sounds was taken from [here](https://www.w3schools.com/graphics/game_sound.asp).
 [Stack Overflow website](https://stackoverflow.com/), [W3School tutorials](https://www.w3schools.com/), 
 [Slack](https://code-institute-room.slack.com/ssb/redirect?entry_point=homepage_nav) forum, and tutor support
-were used when dealing with some specific issues. 
+were used when dealing with some specific issues.
