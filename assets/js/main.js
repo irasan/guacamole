@@ -62,7 +62,7 @@ function randomTime(min, max) {
 function popUp1() {
     if (!timeUp) {
         var activeAvocado = randomVeg(veg);
-        var popUpTime = randomTime(1800, 2500);
+        var popUpTime = randomTime(1500, 2000);
         activeAvocado.src = "assets/images/avocado1.png";
         activeAvocado.style.pointerEvents = "auto";
         activeAvocado.classList.remove('down');
@@ -84,7 +84,7 @@ function popUp1() {
 function popUp2() {
     if (!timeUp) {
         var activeTomato = randomVeg(veg);
-        var popUpTime = randomTime(1000, 2000);
+        var popUpTime = randomTime(1000, 1800);
         activeTomato.src = "assets/images/tomato.png";
         activeTomato.style.pointerEvents = "auto";
         activeTomato.classList.remove('down');
@@ -105,7 +105,7 @@ function popUp2() {
 function popUp3() {
     if (!timeUp) {
         var activeGarlic = randomVeg(veg);
-        var popUpTime = randomTime(800, 1500);
+        var popUpTime = randomTime(500, 1200);
         activeGarlic.src = "assets/images/garlic.png";
         activeGarlic.style.pointerEvents = "auto";
         activeGarlic.classList.remove('down');
@@ -153,7 +153,6 @@ function level1() {
         gameTimer();
         popUp1();
     }, 3000);
-    console.log(currentLevel);
 }
 
 //function to invoke level 2
@@ -246,7 +245,6 @@ function smashAvocado(clickedVeg) {
     smashSound.play();
     score += 10;
     document.getElementById("score").innerHTML = score;
-    console.log(score);
 }
 
 //functions to smash tomatoes and get scores
@@ -256,7 +254,6 @@ function smashTomato(clickedVeg) {
     smashSound.play();
     score += 10;
     document.getElementById("score").innerHTML = score;
-    console.log(score);
 }
 
 //functions to smash garlic and get scores
@@ -266,7 +263,6 @@ function smashGarlic(clickedVeg) {
     smashSound.play();
     score += 10;
     document.getElementById("score").innerHTML = score;
-    console.log(score);
 }
 
 //function to display game timer (borrowed code - see README.md)
@@ -288,10 +284,10 @@ function secondsToStart() {
         seconds--;
         document.getElementById("countdown").textContent = seconds;
         if (seconds <= 0) clearInterval(countdown);
-    }, 900);
+    }, 1000);
     setTimeout(() => {
         document.getElementById("secondsToStart").classList.add('down');
-    }, 3000);
+    }, 2800);
 }
 
 //event listener

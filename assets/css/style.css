@@ -35,8 +35,8 @@ border: 1px solid darkgreen;
 }
 
 .highScore {
-font-size: 1.2rem;
-padding: 0 5px;  
+font-size: 1.1rem;
+padding: 0;  
 }
 
 /* Styles for invitation to play */
@@ -88,18 +88,7 @@ overflow: hidden;
 
 .veg {
 width: 100%;
-animation-name: popUp;
-animation-duration: 1.5s;
 }
-
-@keyframes popUp {
-    0% { 
-        transform: translateY(10px);   
-    }
-  50% { transform: translateY(20px);}
-  100% { transform: translateY(30px);   }
-}
-
 
 .down {
 visibility: hidden;
