@@ -75,6 +75,8 @@ function popUp1() {
                 popUp1();
             }
         }, popUpTime);
+    } else {
+        return;
     }
 }
 
@@ -94,6 +96,8 @@ function popUp2() {
             popUp2();
 
         }, popUpTime);
+    } else {
+        return;
     }
 }
 
@@ -158,7 +162,6 @@ function level2() {
     for (i = 0; i < veg.length; i++) {
         veg[i].src = "assets/images/tomato.png";
     }
-        debugger;
     secondsToStart();
     setTimeout(function () {
         gameTimer();
