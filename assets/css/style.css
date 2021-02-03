@@ -94,8 +94,9 @@ animation-duration: 0.5s;
 }
 
 @keyframes popUp {
-    0%, 4.9999%, 10%, 100% { height: 0%;   }
-  5%, 9.9999% { height:100%;  }
+    0% { height: 0%;   }
+  50% { height: 50%;}
+  100% { height: 100%;   }
 }
 
 
