@@ -5,9 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- JS -->
-    <link rel="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" />
-
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
 
@@ -22,6 +19,7 @@
 </head>
 
 <body>
+    <!-- Header with buttons and welcome message -->
     <header>
         <ul id="top" class="navbar navbar-light bg-light list-unstyled">
             <li class="nav-item">
@@ -33,11 +31,13 @@
                 <h2 style="font-size:6vw;">Smash them all!</h2>
             </li>
             <li class="nav-item">
-                <button class="rightButton"><i class="fas fa-info" onclick="window.location.href = 'rules.html'"
-                        target="_parent"></i></button>
+                <button class="rightButton" onclick="window.location.href = 'rules.html'">
+                    <i class="fas fa-info" ></i></button>
             </li>
         </ul>
     </header>
+
+    <!-- Main picture and play button -->
     <div class="welcome container-fluid">
         <img id="welcomeAvocado" src="assets/images/avocados.png" alt="avocados">
         <button type="button" class="btn btn-success" id="go" onclick="window.location.href = 'game.html'"><i

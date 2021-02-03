@@ -5,6 +5,9 @@ on the screen and earn as many points as they possibly can under 45 seconds (3 r
 This game helps to boost player's concentration and response speed. If the end score is high enough (200 or more), the player 
 will be rewarded with a nice guacamole recipe. The best score of the player is stored and shown during the game. 
 This is a HTML game and it should run on any browser and device.
+![welcome page](/assets/screenshots/welcome-page.png)
+![game start](/assets/screenshots/game2.png)
+![avocado smash](/assets/screenshots/game1.png)
 
 ## UX
 ### Project Goals
@@ -72,6 +75,8 @@ If the player scores 200 points or more, he'll see a dialog window asking if he/
 Recipe page displays a congratulation message together with a super secret guacamole recipe. It also features an image of how the 
 end product, eg guacamole with tortilla chips, should look like. At the bottom the player will find two buttons: 
 one for returning back to Home page, and the other for playing the game.
+![recipe page](/assets/screenshots/win-game.png)
+
 
 ### Existing Features
 * The game is fully functioning and fun to play;
@@ -92,8 +97,14 @@ write the code itself and store it, GitPod and GitHub were used. Deployment of t
 ## Testing
 ### Testing Using Validators
 The website was continuously tested on emulated large and small screens when writing the code. 
-Upon completion of the writing process, developer used [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) 
-and [W3C MarkUp Validation Service](https://validator.w3.org/) to check the validity of the code. 
+Upon completion of the writing process, developer used [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/), 
+[W3C MarkUp Validation Service](https://validator.w3.org/), and [JSHint validator](https://jshint.com/) to check the validity of the code. 
+At first, a few errors were detected. In particular, in HTML the error concerned attribute target on element i that wasn't allowed. 
+This error was fixed by deleting that attribute. 
+In JavaScript there were a few semicolons missing or unnecessary, whih was corrected.
+![No errors HTML](/assets/screenshots/html-validated.png)
+![No errors CSS](/assets/screenshots/css-validated.png)
+![Errors in JS](/assets/screenshots/javascript-errors.png)
 
 ### Client Stories Testing
 Most common path through the website: Home -> (Rules) -> Game -> Recipe.
@@ -126,7 +137,8 @@ The website was also tested on an IOS (Iphone 10) and Android (Pixel 4) platform
 on IOS, but this issue was fixed by reorganizing the classes in the Game.html and proper implementation of Bootstrap.
 
 ### Testing on Potential Website Visitors
-
+The game was tested on potential users - kids and adults. It was very appreciated by the kids. Adults spotted a bug, in particular 
+a veg that appeared once in between changing rounds. Also this game was too simple for grownups.
 
 ## How To Run This Project Locally
 To clone this project into GitHub, you will need:
