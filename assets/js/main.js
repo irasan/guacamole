@@ -1,6 +1,5 @@
 //variables
 var veg = document.querySelectorAll('.veg');
-var bowls = document.querySelectorAll('.bowl');
 var timeUp = false;
 var smashSound = new sound("assets/audio/smash.wav");
 var gameMusic = new sound("assets/audio/gameMusic.wav");
@@ -12,7 +11,7 @@ localStorage.setItem("isToggled", "true");
 //function to save the state of music toggle button across the site and change icons accordingly
 $(".toggleMusicButton").on('click', function () {
     if (localStorage.getItem('isToggled') == null) {
-        localStorage.setItem('isToggled', 'false')
+        localStorage.setItem('isToggled', 'false');
         isToggled = "true";
     } else {
         isToggled = localStorage.getItem("isToggled");
@@ -74,6 +73,8 @@ function popUp1() {
             }
             popUp1();
         }, popUpTime);
+    } else {
+        return;
     }
 }
 
@@ -93,6 +94,8 @@ function popUp2() {
             popUp2();
 
         }, popUpTime);
+    } else {
+        return;
     }
 }
 
@@ -124,7 +127,7 @@ function sound(src) {
     document.body.appendChild(this.sound);
     this.play = function () {
         this.sound.play();
-    }
+    };
     this.stop = function () {
         this.sound.pause();
     };
@@ -133,21 +136,22 @@ function sound(src) {
 //function to invoke level 1
 function level1() {
     currentLevel = 1;
+    secondsToStart();
     setTimeout(function () {
-        popUp1();
-        gameTimer();
         setTimeout(() => {
             timeUp = true;
             updateScore(score);
-            if (score > 60) {
+            if (score > 50) {
                 level2();
             } else {
                 gameover();
                 return;
             }
         }, 15000);
+        gameTimer();
+        popUp1();
     }, 3000);
-    secondsToStart();
+    console.log(currentLevel);
 }
 
 //function to invoke level 2
@@ -155,11 +159,12 @@ function level2() {
     currentLevel = 2;
     for (i = 0; i < veg.length; i++) {
         veg[i].src = "assets/images/tomato.png";
-    };
-    timeUp = false;
+    }
+    secondsToStart();
     setTimeout(function () {
-        popUp2();
         gameTimer();
+        timeUp = false;
+        popUp2();
         setTimeout(() => {
             timeUp = true;
             updateScore();
@@ -171,22 +176,21 @@ function level2() {
             }
         }, 15000);
     }, 3000);
-    secondsToStart();
 }
 
 //function to invoke level 3
 function level3() {
+    timeUp = false;
     currentLevel = 3;
     for (i = 0; i < veg.length; i++) {
         veg[i].src = "assets/images/garlic.png";
-    };
-    timeUp = false;
+    }
     setTimeout(function () {
         popUp3();
         gameTimer();
         setTimeout(() => {
             timeUp = true;
-            showResults()
+            showResults();
         }, 15000);
     }, 3000);
     secondsToStart();
@@ -209,7 +213,7 @@ function updateScore(score) {
     if (this.score > highestScore) {
         highestScore = score;
         localStorage.setItem('highestScore', JSON.stringify(highestScore));
-    };
+    }
     document.getElementById('highScore').innerText = localStorage.getItem('highestScore');
 }
 

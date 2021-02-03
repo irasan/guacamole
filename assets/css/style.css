@@ -5,6 +5,7 @@ font-family: 'Varela Round', sans-serif;
 text-align: center;
 }
 
+/* Styles for header */
 #top {
 margin-bottom: 0;
 }
@@ -78,7 +79,7 @@ cursor: pointer;
 border-radius: 5px;
 }
 
-/* Styles for game itself */
+/* Styles for game field */
 #game {
 position: relative;
 background-color: yellow;
@@ -110,6 +111,12 @@ width: 100%;
 width: 100%;
 }
 
+.veg, .bowl {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 .empty {
 height: 20px;
 }
@@ -130,6 +137,7 @@ border: 3px solid #cccccc;
 padding: 0 5px;
 }
 
+/* Styles for countdown before the game */
 #secondsToStart {
 width: 160px;
 height: 120px;
@@ -193,14 +201,14 @@ padding: 12px 24px;
 padding: 12px 24px;
 }
 
+.highScore {
+font-size: 1.2rem;
+}
+
 #game {
 margin-top: 30px;
 width: 900px;
 height: 950px;
-}
-
-.highScore {
-font-size: 1.2rem;
 }
 
 .veg {
