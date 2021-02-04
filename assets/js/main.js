@@ -175,7 +175,7 @@ function level2() {
             }
         }, 15000);
     }, 3000);
-    document.getElementById("timerMessage").innerText = "Round 2 will start in "
+    document.getElementById("timerMessage").innerText = "Round 2 will start in ";
     secondsToStart();
 }
 
@@ -194,7 +194,7 @@ function level3() {
             showResults();
         }, 15000);
     }, 3000);
-    document.getElementById("timerMessage").innerText = "Round 3 will start in "
+    document.getElementById("timerMessage").innerText = "Round 3 will start in ";
     secondsToStart();
 }
 
@@ -207,7 +207,7 @@ function startGame() {
 // function to update highest score
 function updateScore(score) {
     if (localStorage.getItem('highestScore') == null) {
-        highestScore = localStorage.setItem('highestScore', JSON.stringify(score));
+        highestScore = localStorage.setItem('highestScore', JSON.stringify(0));
     } else {
         highestScore = localStorage.getItem("highestScore");
     }
