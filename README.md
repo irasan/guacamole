@@ -130,9 +130,11 @@ As a return player, I want to be able to increase the complexity of the game:
 ### Testing on Different Browsers and Devices
 The website was tested on different browsers and proved to be issue-free on the following browsers:
 * Chrome;
-* Safari;
-* Edge;
-* Firefox.
+* Safari.
+
+While testing on Edge there was found an issue regarding local storage, meaning that the highest score wasn't saved or displayed.
+
+As for Firefox, Guacamole game, in particaular round 2, wasn't displayed properly there.  
 The website was also tested on an IOS (Iphone 10) and Android (Pixel 4) platforms. At first the game wasn't displaying properly 
 on IOS, but this issue was fixed by reorganizing the classes in the Game.html and proper implementation of Bootstrap.
 
