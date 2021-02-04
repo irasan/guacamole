@@ -12,7 +12,6 @@ localStorage.setItem("isToggled", "true");
 $(".toggleMusicButton").on('click', function () {
     if (localStorage.getItem('isToggled') == null) {
         localStorage.setItem('isToggled', 'false');
-        isToggled = "true";
     } else {
         isToggled = localStorage.getItem("isToggled");
     }
@@ -28,10 +27,10 @@ $(".toggleMusicButton").on('click', function () {
 // function to play and pause game music
 function togglePlay() {
     isToggled = localStorage.getItem('isToggled');
-    if (isToggled == 'false') {
-        gameMusic.play();
-    } else {
+    if (isToggled == 'true') {
         gameMusic.stop();
+    } else {
+        gameMusic.play();
     }
 }
 
@@ -142,8 +141,8 @@ function level1() {
     setTimeout(function () {
         setTimeout(() => {
             timeUp = true;
-            updateScore(score);
             if (score > 50) {
+                updateScore(score);
                 level2();
             } else {
                 gameover();
@@ -203,6 +202,7 @@ function level3() {
 function startGame() {
     document.getElementById("playNow").classList.add('down');
     level1();
+    gameMusic.play();
 }
 
 // function to update highest score
@@ -217,7 +217,7 @@ function updateScore(score) {
         highestScore = score;
         localStorage.setItem('highestScore', JSON.stringify(highestScore));
     }
-    document.getElementById('highScore').innerText = localStorage.getItem('highestScore');
+    getScore();
 }
 
 // function to display highest score
