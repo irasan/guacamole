@@ -207,14 +207,14 @@ function startGame() {
 // function to update highest score
 function updateScore(score) {
     if (localStorage.getItem('highestScore') == null) {
-        highestScore = localStorage.setItem('highestScore', JSON.stringify(0));
+        myScore = localStorage.setItem('highestScore', JSON.stringify(highestScore));
     } else {
-        highestScore = localStorage.getItem("highestScore");
+        myScore = localStorage.getItem("highestScore");
     }
 
-    if (this.score > highestScore) {
-        highestScore = score;
-        localStorage.setItem('highestScore', JSON.stringify(highestScore));
+    if (this.score > myScore) {
+        myScore = score;
+        localStorage.setItem('highestScore', JSON.stringify(myScore));
     }
     getScore();
 }
