@@ -105,6 +105,12 @@ In JavaScript there were a few semicolons missing or unnecessary, whih was corre
 ![No errors CSS](/assets/screenshots/css-validated.png)
 ![Errors in JS](/assets/screenshots/javascript-errors.png)
 
+There are two known issues with this game, that couldn't be resolved. First issue seems to be connected to recursive popUp function 
+and setTimeout inside it. The bug is represented by the one additional call of this function when it's supposed to have ended. In the game it
+is represented by showing a veg when the countdown timer before the next level has started.
+Another issue is related to the game music. In order to prevent the music from playing on each page, there was an attempt to 
+save the state of the music toggle button in local storage. It worked, however the toggle button seems to be working only from the second click.
+
 ### Client Stories Testing
 Most common path through the website: Home -> (Rules) -> Game -> Recipe.
 On the Home and Game pages there's a play button right in the center. To visit rules, the player might want to
@@ -136,6 +142,8 @@ However, when using local server this isuue is resolved.
 
 The website was also tested on an IOS (Iphone 10) and Android (Pixel 4) platforms. At first the game wasn't displaying properly 
 on IOS, but this issue was fixed by reorganizing the classes in the Game.html and proper implementation of Bootstrap.
+There are some minor styling issues that can be seen on different screens, but they don't influence the overall feel and performance of the game.
+
 
 ### Testing on Potential Website Visitors
 The game was tested on potential users - kids and adults. It was very appreciated by the kids. Adults spotted a bug, in particular 
