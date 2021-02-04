@@ -158,7 +158,7 @@ function level1() {
 //function to invoke level 2
 function level2() {
     currentLevel = 2;
-    updateScore(score);
+    getScore();
     for (i = 0; i < veg.length; i++) {
         veg[i].src = "assets/images/tomato.png";
     }
@@ -183,6 +183,7 @@ function level2() {
 //function to invoke level 3
 function level3() {
     timeUp = false;
+    getScore();
     currentLevel = 3;
     for (i = 0; i < veg.length; i++) {
         veg[i].src = "assets/images/garlic.png";
