@@ -133,14 +133,15 @@ The website was tested on different browsers and proved to be issue-free on the 
 * Safari.
 
 While testing on Edge there was found an issue regarding local storage, meaning that the highest score wasn't saved or displayed.
+However, when using local server this isuue is resolved.
 
-As for Firefox, Guacamole game, in particaular round 2, wasn't displayed properly there.  
 The website was also tested on an IOS (Iphone 10) and Android (Pixel 4) platforms. At first the game wasn't displaying properly 
 on IOS, but this issue was fixed by reorganizing the classes in the Game.html and proper implementation of Bootstrap.
 
 ### Testing on Potential Website Visitors
 The game was tested on potential users - kids and adults. It was very appreciated by the kids. Adults spotted a bug, in particular 
-a veg that appeared once in between changing rounds. Also this game was too simple for grownups.
+a veg that appeared once in between changing rounds. This bug remains and need to be fixed during future development. 
+Also this game looks quite simple for grownups, that's why defferent difficulty levels should be implemented in the future.
 
 ## How To Run This Project Locally
 To clone this project into GitHub, you will need:
