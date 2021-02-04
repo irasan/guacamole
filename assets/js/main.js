@@ -181,6 +181,7 @@ function level2() {
 
 //function to invoke level 3
 function level3() {
+    updateScore();
     timeUp = false;
     currentLevel = 3;
     for (i = 0; i < veg.length; i++) {
