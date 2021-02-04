@@ -161,7 +161,6 @@ function level2() {
     for (i = 0; i < veg.length; i++) {
         veg[i].src = "assets/images/tomato.png";
     }
-    secondsToStart();
     setTimeout(function () {
         gameTimer();
         timeUp = false;
@@ -177,6 +176,8 @@ function level2() {
             }
         }, 15000);
     }, 3000);
+    document.getElementById("timerMessage").innerText = "Round 2 will start in "
+    secondsToStart();
 }
 
 //function to invoke level 3
@@ -195,6 +196,7 @@ function level3() {
             showResults();
         }, 15000);
     }, 3000);
+    document.getElementById("timerMessage").innerText = "Round 3 will start in "
     secondsToStart();
 }
 
@@ -202,13 +204,12 @@ function level3() {
 function startGame() {
     document.getElementById("playNow").classList.add('down');
     level1();
-    gameMusic.play();
 }
 
 // function to update highest score
 function updateScore(score) {
     if (localStorage.getItem('highestScore') == null) {
-        highestScore = localStorage.setItem('highestScore', JSON.stringify(0));
+        highestScore = localStorage.setItem('highestScore', JSON.stringify(score));
     } else {
         highestScore = localStorage.getItem("highestScore");
     }
