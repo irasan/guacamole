@@ -20,6 +20,7 @@ margin: auto;
 float: left;
 border-radius: 5px;
 border: 1px solid darkgreen;
+padding: 0;
 }
 
 .rightButton {
@@ -32,6 +33,7 @@ margin: auto;
 float: right; 
 border-radius: 5px;
 border: 1px solid darkgreen;
+padding: 0;
 }
 
 .highScore {
@@ -117,7 +119,7 @@ height: 20px;
 }
 
 .scoreTimeDisplay {
-font-size: 26px;
+font-size: 22px;
 background-color: lightgreen;
 }
 

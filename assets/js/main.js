@@ -28,7 +28,7 @@ $(".toggleMusicButton").on('click', function () {
 // function to play and pause game music
 function togglePlay() {
     isToggled = localStorage.getItem('isToggled');
-    if (isToggled == 'true') {
+    if (isToggled == 'false') {
         gameMusic.play();
     } else {
         gameMusic.stop();
@@ -158,6 +158,7 @@ function level1() {
 //function to invoke level 2
 function level2() {
     currentLevel = 2;
+    updateScore(score);
     for (i = 0; i < veg.length; i++) {
         veg[i].src = "assets/images/tomato.png";
     }
@@ -168,7 +169,7 @@ function level2() {
         popUp2();
         setTimeout(() => {
             timeUp = true;
-            updateScore();
+            updateScore(score);
             if (score > 120) {
                 level3();
             } else {
@@ -181,7 +182,6 @@ function level2() {
 
 //function to invoke level 3
 function level3() {
-    updateScore();
     timeUp = false;
     currentLevel = 3;
     for (i = 0; i < veg.length; i++) {
