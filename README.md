@@ -6,8 +6,8 @@ This game helps to boost player's concentration and response speed. If the end s
 will be rewarded with a nice guacamole recipe. The best score of the player is stored and shown during the game. 
 This is a HTML game and it should run on any browser and device.
 ![welcome page](/assets/screenshots/welcome-page.png)
-![game start](/assets/screenshots/game2.png)
-![avocado smash](/assets/screenshots/game1.png)
+![game start](/assets/screenshots/game2.jpg)
+![avocado smash](/assets/screenshots/game1.jpg)
 
 ## UX
 ### Project Goals

@@ -11,10 +11,10 @@ margin-bottom: 0;
 }
 
 #playMusic {
-font-size: 1.6rem;
+font-size: 1.4rem;
 color: green;
-width:60px;
-height:60px; 
+width:40px;
+height:40px; 
 display: block;
 margin: auto;
 float: left;
@@ -23,10 +23,10 @@ border: 1px solid darkgreen;
 }
 
 .rightButton {
-font-size: 1.6rem;
+font-size: 1.4rem;
 color: green;
-width:60px;
-height:60px;  
+width:40px;
+height:40px;  
 display: block;
 margin: auto;
 float: right; 
@@ -43,7 +43,11 @@ padding: 0;
 .welcome {
 position: relative;
 }   
-   
+
+.welcome-message {
+font-size:4vw;
+}
+
 #welcomeAvocado {
 width: 100%;
 }
@@ -103,9 +107,9 @@ width: 100%;
 }
 
 .veg, .bowl {
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+-webkit-user-select: none;
+-ms-user-select: none;
+user-select: none;
 }
 
 .empty {
@@ -113,25 +117,21 @@ height: 20px;
 }
 
 .scoreTimeDisplay {
-font-size: 22px;
+font-size: 26px;
 background-color: lightgreen;
 }
 
-#timer {
+#timer,
+#score {
 border: 3px solid #cccccc;
 padding: 0 5px;
 border-radius: 5px;
 }
 
-#score {
-border: 3px solid #cccccc;
-padding: 0 5px;
-}
-
 /* Styles for countdown before the game */
 #secondsToStart {
-width: 160px;
-height: 120px;
+width: 60%;
+height: auto;
 background:rgba(15, 231, 15, 0.4);
 font-size: 1.8rem;
 text-align: center;
@@ -145,6 +145,11 @@ border: 1px solid darkgreen;
 }
 
 @media (min-width: 500px){ 
+#top button {
+width: 60px;
+height: 60px;
+}
+
 #secondsToStart {
 width: 260px;
 height: 160px;
