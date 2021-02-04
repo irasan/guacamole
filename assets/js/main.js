@@ -15,10 +15,10 @@ $(".toggleMusicButton").on('click', function () {
     } else {
         isToggled = localStorage.getItem("isToggled");
     }
-    if (isToggled == 'false') {
-        localStorage.setItem('isToggled', true);
+    if (isToggled == 'true') {
+        localStorage.setItem('isToggled', 'false');
     } else {
-        localStorage.setItem('isToggled', false);
+        localStorage.setItem('isToggled', 'true');
     }
     icon = $(this).find("i");
     icon.toggleClass('fa-volume-mute fa-volume-off');
@@ -284,7 +284,7 @@ function secondsToStart() {
     var countdown = setInterval(function () {
         seconds--;
         document.getElementById("countdown").textContent = seconds;
-        if (seconds <= 0) clearInterval(countdown);
+        if (seconds <= 1) clearInterval(countdown);
     }, 1000);
     setTimeout(() => {
         document.getElementById("secondsToStart").classList.add('down');
