@@ -4,7 +4,7 @@ This is an interpretation of the famous Whack-a-mole game. Players are invited t
 on the screen and earn as many points as they possibly can under 45 seconds (3 rounds, 15 seconds each). 
 This game helps to boost player's concentration and response speed. If the end score is high enough (200 or more), the player 
 will be rewarded with a nice guacamole recipe. The best score of the player is stored and shown during the game. 
-This is a HTML game and it should run on any browser and device.
+This is a HTML game and it should run on any browser and device. Live page [here](https://irasan.github.io/guacamole/)
 ![welcome page](/assets/screenshots/welcome-page.png)
 ![game screenshots](/assets/screenshots/game.jpg)
 
